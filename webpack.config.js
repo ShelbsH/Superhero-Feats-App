@@ -30,7 +30,7 @@ module.exports = {
     open: true
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: 'index.html' }),
+    new HtmlWebpackPlugin({ template: 'views/index.html' }),
     new extractTextPlugin('styles.css')
   ]
 };
