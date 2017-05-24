@@ -13,7 +13,7 @@ const getTemplate = htmlFile => {
 app.use(express.static(filePath));
 
 app.get('/', (req, res) => {
-  response.sendFile(getTemplate('index'));
+  res.sendFile(getTemplate('index'));
 });
 
 app.listen(PORT, () => console.log('The application is listening to port, ' + PORT));
