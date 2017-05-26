@@ -18,7 +18,7 @@ module.exports = {
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader']
         })
-      }, 
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -30,7 +30,6 @@ module.exports = {
     open: true
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: 'views/index.html' }),
     new extractTextPlugin('styles.css')
   ]
 };
