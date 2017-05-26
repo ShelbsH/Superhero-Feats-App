@@ -30,7 +30,7 @@ app.use(express.static(filePath));
 
 //Render the index template upon the default root index request.
 app.get('/', (req, res) => {
-  res.render(getTemplate('index'), {message: 'hello world'});
+  res.render(getTemplate('index'));
 });
 
 app.listen(PORT, () => console.log('The application is listening to port, ' + PORT));
