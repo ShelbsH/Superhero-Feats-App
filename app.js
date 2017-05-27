@@ -2,4 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Demo from './components/demo';
 
-ReactDOM.render(<Demo />, document.getElementById('root'));
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(<Demo />, document.getElementById('root'));
+});

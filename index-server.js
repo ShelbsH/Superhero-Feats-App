@@ -5,9 +5,7 @@ const morgan = require('morgan');
 
 const app = express();
 const PORT = 8000;
-
-//Sets up the path from the "dist" directory.
-const filePath = path.resolve(__dirname, 'dist');
+const filePath = path.resolve(__dirname, 'dist/');
 
 //Use nunchucks as the template engine
 app.set('view engine', 'njk');
