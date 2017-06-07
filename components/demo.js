@@ -9,6 +9,7 @@ class Demo extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="app-root">
                 <h1>Superhero Feats</h1>
