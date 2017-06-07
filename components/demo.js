@@ -1,10 +1,23 @@
 import React from 'react';
+import SearchBar from './SearchBar';
 import '../styles/main.scss';
 
 class Demo extends React.Component {
-  render() {
-    return (<h1 className="text-center">Basic React Boilerplate</h1>);
-  }
+    constructor(props) {
+        super(props);
+        this.displayName = 'SuperheroFeats';
+    }
+
+    render() {
+        return (
+            <div className="app-root">
+                <h1>Superhero Feats</h1>
+                <SearchBar />
+
+            </div>
+
+        );
+    }
 }
 
 export default Demo;
