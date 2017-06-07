@@ -24,7 +24,7 @@
       "warn"
     ],
     "linebreak-style": [
-      "error",
+      "off",
       "windows"
     ],
     "quotes": [
