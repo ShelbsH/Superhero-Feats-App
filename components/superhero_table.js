@@ -1,29 +1,5 @@
 import React from 'react';
 
-class SuperTable_Head extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <table>
-        <thead>
-          <tr>
-            <th>Thumbnail</th>
-            <th>Real Name</th>
-            <th>Super Name</th>
-            <th>Tier Level</th>
-            <th>Publisher</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.props.tableBody}
-        </tbody>
-      </table>
-    );
-  }
-};
-
 class SuperTable_Body extends React.Component {
   constructor(props) {
     super(props);
