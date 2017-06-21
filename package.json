@@ -4,7 +4,7 @@
   "description": "webpack practice",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "dev": "nodemon index-server.js",
     "build": "webpack --watch"
   },
@@ -31,6 +31,7 @@
     "mocha": "^3.4.1",
     "morgan": "^1.8.2",
     "node-sass": "^4.5.2",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",

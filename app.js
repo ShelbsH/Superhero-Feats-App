@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   ReactDOM.render(
     <Demo
-      bar={data}
+      showData={data}
     />,
     document.getElementById('root')
   );
