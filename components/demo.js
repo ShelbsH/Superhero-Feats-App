@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-import Superhero_Table from './superhero_table.js';
+import HeroTable from './Hero_Table.js';
 import '../styles/main.scss';
 
 class Demo extends React.Component {
@@ -14,9 +14,8 @@ class Demo extends React.Component {
       <div className="app-root">
         <h1>Superhero Feats</h1>
         <SearchBar />
-        <Superhero_Table foo={this.props.bar} />
+        <HeroTable data={this.props.showData} />
       </div>
-
     );
   }
 }
