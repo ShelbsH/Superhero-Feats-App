@@ -3,11 +3,7 @@ import {shallow} from 'enzyme';
 import SearchBar from '../components/SearchBar';
 
 describe('The Search Bar Component will display data from Superheroes', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<searchBar />)
-  });
+  const wrapper = shallow(<SearchBar />);
 
   it('should have a component that exists', () => {
     expect(wrapper.exists()).toBe(true);
