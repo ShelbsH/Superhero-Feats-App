@@ -22,14 +22,14 @@ class SearchBar extends React.Component {
   render() {
 
     const returnHeroNamesOnKey = props => {
-      let keyInput = this.state.keyValues;
+      let keyInput = this.state.keyValues.toLowerCase();
       let keyLength = keyInput.length;
 
       if (keyInput) {
         return props.reduce((acc, curr) => {
           let realName = curr.real_name;
 
-          if (keyInput.indexOf(realName.slice(0, keyLength)) === 0) {
+          if (keyInput.indexOf(realName.toLowerCase().slice(0, keyLength)) === 0) {
             acc.push(realName);
           }
           return acc;
