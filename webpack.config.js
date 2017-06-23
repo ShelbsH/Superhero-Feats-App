@@ -12,11 +12,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /(\.scss|\.css)/,
         use: extractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader']
         })
+      },
+      {
+          test: /(\.woff|\.ttf|\.svg|\.eot|\.gif)/,
+          use: 'url-loader'
       },
       {
         test: /\.js$/,
