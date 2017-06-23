@@ -5,39 +5,45 @@ import Demo from './components/demo';
 document.addEventListener('DOMContentLoaded', () => {
   const data = [
     {
-      real_name: 'Clark Kent',
       thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
+      real_name: 'Clark Kent',
       superhero_name: 'Superman',
       tier: 'powerhouse',
-      publisher: 'dc'
+      publisher: 'DC'
+    }, {
+      thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
+      real_name: 'Bruce Wayne',
+      superhero_name: 'Batman',
+      tier: 'Street Leveler',
+      publisher: 'DC'
+    }, {
+      thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
+      real_name: 'Peter Parker',
+      superhero_name: 'Spider-Man',
+      tier: 'Street Levevler',
+      publisher: 'Marvel'
     },
     {
-      real_name: 'Clark Kent',
       thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
-      superhero_name: 'Superman',
+      real_name: 'Carol Danvers',
+      superhero_name: 'Captain Marvel',
       tier: 'powerhouse',
-      publisher: 'dc'
-    },
-    {
-      real_name: 'Clark Kent',
+      publisher: 'Marvel'
+    }, {
       thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
-      superhero_name: 'Superman',
-      tier: 'powerhouse',
-      publisher: 'dc'
-    },
-    {
-      real_name: 'Clark Kent',
+      real_name: 'John Stewart',
+      superhero_name: 'Green Lantern',
+      tier: 'Power House',
+      publisher: 'DC'
+    }, {
       thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
-      superhero_name: 'Superman',
-      tier: 'powerhouse',
-      publisher: 'dc'
+      real_name: 'Matthew Murdock',
+      superhero_name: 'Daredevil',
+      tier: 'Street Levevler',
+      publisher: 'Marvel'
     }
-
   ];
+
   ReactDOM.render(
-    <Demo
-      showData={data}
-    />,
-    document.getElementById('root')
-  );
+    <Demo showData={data}/>, document.getElementById('root'));
 });
