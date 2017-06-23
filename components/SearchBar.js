@@ -38,9 +38,9 @@ class SearchBar extends React.Component {
     };
 
     const renderHeroList = (names) => {
-      const foo = returnHeroNamesOnKey(names);
+      const getHeroNames = returnHeroNamesOnKey(names);
       if (this.state.keyValues) {
-        return foo.map((item, index) => {
+        return getHeroNames.map((item, index) => {
           return (
             <ul key={index}>
               <li>{item}</li>
