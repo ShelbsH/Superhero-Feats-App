@@ -42,9 +42,7 @@ class SearchBar extends React.Component {
       if (this.state.keyValues) {
         return getHeroNames.map((item, index) => {
           return (
-            <ul key={index}>
-              <li>{item}</li>
-            </ul>
+            <li key={index}>{item}</li>
           );
         });
       }
@@ -56,7 +54,9 @@ class SearchBar extends React.Component {
       <div className="auto-complete">
         <p>Search for character:</p>
         <input type="text" onKeyUp={this.keyChange}/>
-        {autoComplete}
+        <ul>
+          {autoComplete}
+        </ul>
       </div>
     );
   }
