@@ -21,12 +21,17 @@ class SearchBar extends React.Component {
 
   render() {
 
-    const returnHeroNamesOnKey = props => {
+    /**
+     * @method returnHeroNamesOnKey
+     * @param  {Array} heroNames - will be passed as an array argument
+     * @return {Array} Return the array list of names that match the input keys
+     */
+    const returnHeroNamesOnKey = heroNames => {
       let keyInput = this.state.keyValues.toLowerCase();
       let keyLength = keyInput.length;
 
       if (keyInput) {
-        return props.reduce((acc, curr) => {
+        return heroNames.reduce((acc, curr) => {
           let realName = curr.real_name;
 
           if (keyInput.indexOf(realName.toLowerCase().slice(0, keyLength)) === 0) {
@@ -37,7 +42,7 @@ class SearchBar extends React.Component {
       }
     };
 
-    const renderHeroList = (names) => {
+    const renderHeroList = props => {
       const getHeroNames = returnHeroNamesOnKey(names);
       if (this.state.keyValues) {
         return getHeroNames.map((item, index) => {
