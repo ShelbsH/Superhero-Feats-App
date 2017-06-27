@@ -1,6 +1,4 @@
-#root {
-  color: lightblue;
-  .text-center {
-    text-align: center;
-  }
-}
+/*import partials*/
+@import 'partials/table.scss';
+
+@import 'base.scss';
