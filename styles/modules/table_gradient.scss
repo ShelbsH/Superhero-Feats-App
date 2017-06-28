@@ -1,0 +1,5 @@
+@mixin tableGradient($gradient1, $gradient2) {
+    background: #666666;
+    background: linear-gradient( to bottom, $gradient1, $gradient2);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#333333', GradientType=0);
+};
