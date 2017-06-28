@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/partials/table.scss';
 
 class HeroTable extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class HeroTable extends React.Component {
     };
 
     return (
-      <table>
+      <table className="table heroTable">
         <thead>
           <tr>
             <th>Thumbnail</th>
