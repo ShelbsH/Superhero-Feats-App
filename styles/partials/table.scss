@@ -5,7 +5,6 @@
   max-width: 1168px;
   border-radius: 1.5em 1.5em 0 0;
   :first-child {
-    border-bottom: none;
     th:first-child {
       border-radius: 1.5rem 0 0 0;
     }
@@ -13,6 +12,7 @@
       border-radius: 0 1.5rem 0 0;
     }
     th {
+      border-bottom: none;
       color: $tableFontColor;
       font-size: 2rem;
       height: 62px;
