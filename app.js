@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/main.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -24,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       superhero_name: 'Spider-Man',
       tier: 'Street Levevler',
       publisher: 'Marvel'
-    },
-    {
+    }, {
       thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
       real_name: 'Carol Danvers',
       superhero_name: 'Captain Marvel',
