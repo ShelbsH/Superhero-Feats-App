@@ -36,9 +36,10 @@ app.get('/', (req, res) => {
   res.render(getTemplate('index'));
 });
 
-//Send images based on the GET request.
-app.get(/^\/.*\.png$/, (req, res) => {
-  res.sendFile(path.join(__dirname, 'images/row_background_4_03.png'));
+//Send image files based on GET request.
+app.get(/^\/.*\.(png|jpg)$/, (req, res) => {
+  const imgFile = req.url.slice(req.url.lastIndexOf('/') + 1);
+  res.sendFile(path.join(__dirname, `images/${imgFile}`));
 });
 
 app.listen(PORT, () => console.log('The application is listening to port, ' + PORT));
