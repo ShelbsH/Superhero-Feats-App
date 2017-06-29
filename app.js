@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
       real_name: 'Clark Kent',
       superhero_name: 'Superman',
-      tier: 'powerhouse',
+      tier: 'Power House',
       publisher: 'DC'
     }, {
       thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
       real_name: 'Carol Danvers',
       superhero_name: 'Captain Marvel',
-      tier: 'powerhouse',
+      tier: 'Power House',
       publisher: 'Marvel'
     }, {
       thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
