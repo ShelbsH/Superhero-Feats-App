@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/partials/table.scss';
+import '../styles/components/Hero_Table.scss';
 
 class HeroTable extends React.Component {
   constructor(props) {
@@ -13,8 +13,8 @@ class HeroTable extends React.Component {
       return props.map((items, idx) => {
         return (
           <tr key={idx}>
-            <td><img src={items.thumbnail} width="50" height="50"/></td>
-            <td>{items.real_name}</td>
+            <td>
+              <span><img src={items.thumbnail}/></span>{items.real_name}</td>
             <td>{items.superhero_name}</td>
             <td>{items.tier}</td>
             <td>{items.publisher}</td>
@@ -24,17 +24,16 @@ class HeroTable extends React.Component {
     };
 
     return (
-      <table className="table heroTable">
-        <thead>
+      <table className="heroTable">
+        <thead className="heroTable-head">
           <tr>
-            <th>Thumbnail</th>
             <th>Real Name</th>
             <th>Super Name</th>
             <th>Tier Level</th>
             <th>Publisher</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="heroTable-body">
           {render_table(this.props.data)}
         </tbody>
       </table>
