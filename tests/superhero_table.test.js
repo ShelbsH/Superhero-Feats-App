@@ -13,7 +13,7 @@ describe('Superhero Table', () => {
         thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
         real_name: 'Clark Kent',
         superhero_name: 'Superman',
-        tier: 'powerhouse',
+        tier: 'Power House',
         publisher: 'DC'
       }, {
         thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
@@ -42,7 +42,7 @@ describe('Superhero Table', () => {
   });
 
   it('should be able to match the equal amount of properties from the superhero_data', () => {
-    expect(firstRowNode).toHaveLength(5);
+    expect(firstRowNode).toHaveLength(4);
   });
 
   it('needs to successfully render the thumbnail image', () => {
@@ -56,19 +56,19 @@ describe('Superhero Table', () => {
   });
 
   it('needs to successfully render the real name', () => {
-    expect(firstRowNode.at(1).text()).toBe(superhero_data[0].real_name);
+    expect(firstRowNode.at(0).text()).toBe(superhero_data[0].real_name);
   });
 
   it('needs to successfully render the superhero name', () => {
 
-    expect(firstRowNode.at(2).text()).toBe(superhero_data[0].superhero_name);
+    expect(firstRowNode.at(1).text()).toBe(superhero_data[0].superhero_name);
   });
 
   it('needs to successfully render the tier level', () => {
-    expect(firstRowNode.at(3).text()).toBe(superhero_data[0].tier);
+    expect(firstRowNode.at(2).text()).toBe(superhero_data[0].tier);
   });
 
   it('needs to successfully render the publisher', () => {
-    expect(firstRowNode.at(4).text()).toBe(superhero_data[0].publisher);
+    expect(firstRowNode.at(3).text()).toBe(superhero_data[0].publisher);
   });
 });
