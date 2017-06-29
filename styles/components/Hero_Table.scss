@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500');
+
+$text-color: #ffffff;
+$heroBorder-color: #161616;
+
+body {
+  background-color: #242424;
+}
+
+div {
+  margin: 0 70px;
+  margin-top: 45px;
+}
+
+.heroTable {
+  font-family: 'Quicksand', 'sans-serif';
+  max-width: 116.8rem;
+  background-color: #5c5c5c;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.heroTable-head th {
+  &:first-child {
+    border-radius: 1.5rem 0 0 0;
+  }
+  &:last-child {
+    border-radius: 0 1.5rem 0 0;
+  }
+  text-align: center;
+  border-bottom: 1px solid $heroBorder-color;
+  font-size: 1.9rem;
+  height: 6.2rem;
+  color: $text-color;
+  background: linear-gradient(to bottom, #666666 1%, #333333 100%);
+}
+
+.heroTable-body:first-child {
+  border-top: none;
+}
+
+.heroTable-body tr {
+  border: 1px solid $heroBorder-color;
+  background: url('/.../images/row_background_4_03.png');
+}
+.heroTable-body td {
+  width: 120.2rem;
+  padding: 1.45rem;
+  text-align: center;
+  font-size: 2.0rem;
+  color: $text-color;
+}
+
+.heroTable-body td:first-child {
+  text-align: left;
+}
+
+span img {
+  width: 6.6rem;
+  height: 4.8rem;
+  border: 1px solid black;
+  margin-right: 1.3rem;
+}
+
+/**.heroTable {
+
+
+}
+
+$default_spacing: 10px;
+
+@function double($val) {
+  @return $val * 2;
+}
+
+@function getCDNAsset($asset) {
+  @return "https://cdn.aws.s3/my_org/my_bucket_name/"+$asset;
+}
+
+.heroTable-header {
+  margin: double($default_spacing);
+  background-image: url(getCDNAsset('my_image.png'));
+
+}
+
+.submit-button {
+  background-color: dodgerblue;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+}
+
+.submit-button-padded {
+  @extend .submit-button;
+  padding: 18px;
+
+}
+
+
+
+
+
+// <button class="submit-button submit-button-padded">Submit</button>
+//
+//
+// <table class="heroTable">
+//   <thead class="heroTable-head">
+//     <tr class="heroTable-head-row">
+//       <th class="heroTable-header">Some Content</th>
+//
+//     </tr>
+//   </thead>
+//   <tbody class="heroTable-body">
+//     <
+//   </tbody>
+//
+// </table>**/
