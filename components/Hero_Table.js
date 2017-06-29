@@ -12,12 +12,12 @@ class HeroTable extends React.Component {
     const render_table = props => {
       return props.map((items, idx) => {
         return (
-          <tr key={idx}>
-            <td>
-              <span><img src={items.thumbnail}/></span>{items.real_name}</td>
-            <td>{items.superhero_name}</td>
-            <td>{items.tier}</td>
-            <td>{items.publisher}</td>
+          <tr key={idx} className="heroTable-body-row">
+            <td className="heroTable-body-col">
+              <span><img className="heroTable-body-col-span-img" src={items.thumbnail}/></span>{items.real_name}</td>
+            <td className="heroTable-body-col">{items.superhero_name}</td>
+            <td className="heroTable-body-col">{items.tier}</td>
+            <td className="heroTable-body-col">{items.publisher}</td>
           </tr>
         );
       });
@@ -27,10 +27,10 @@ class HeroTable extends React.Component {
       <table className="heroTable">
         <thead className="heroTable-head">
           <tr>
-            <th>Real Name</th>
-            <th>Super Name</th>
-            <th>Tier Level</th>
-            <th>Publisher</th>
+            <th className="heroTable-header">Real Name</th>
+            <th className="heroTable-header">Super Name</th>
+            <th className="heroTable-header">Tier Level</th>
+            <th className="heroTable-header">Publisher</th>
           </tr>
         </thead>
         <tbody className="heroTable-body">
