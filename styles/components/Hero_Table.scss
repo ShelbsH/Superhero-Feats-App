@@ -39,6 +39,9 @@ div {
     :first-child {
         text-align: left;
     }
+    &:hover {
+      background: url('/.../images/row_background_hover_03.png');
+    }
 }
 
 .heroTable-body-col {
