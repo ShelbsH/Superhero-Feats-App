@@ -1,10 +1,13 @@
 @import '../modules/variables.scss';
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500');
 
+@function addBackground($url) {
+  @return '/.../images/' + $url;
+}
+
 body {
     background-color: #242424;
 }
-
 div {
     margin: 0 70px;
     margin-top: 45px;
@@ -32,18 +35,16 @@ div {
 .heroTable-body:first-child {
     border-top: none;
 }
-
 .heroTable-body-row {
-    background: url('/.../images/row_background_4_03.png');
+    background: url(addBackground('row_background_4_03.png'));
     border: 1px solid $heroBorder-color;
     :first-child {
         text-align: left;
     }
     &:hover {
-      background: url('/.../images/row_background_hover_03.png');
+      background: url(addBackground('row_background_hover_03.png'));
     }
 }
-
 .heroTable-body-col {
     color: $text-color;
     font-size: 2.0rem;
@@ -51,7 +52,6 @@ div {
     text-align: center;
     width: 120.2rem;
 }
-
 .heroTable-body-col-span-img {
     border: 1px solid black;
     height: 4.8rem;
