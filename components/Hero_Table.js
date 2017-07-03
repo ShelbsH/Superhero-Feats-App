@@ -9,12 +9,9 @@ class HeroTable extends React.Component {
 
   render() {
     const bodyCol = 'heroTable-body-col';
+    const spanImg = 'heroTable-body-col-span-img';
 
-    const td = children => {
-      return (
-        <td className={bodyCol}>{children}</td>
-      );
-    };
+    const td = children => (<td className={bodyCol}>{children}</td>);
 
     const render_table = props => {
 
@@ -22,7 +19,8 @@ class HeroTable extends React.Component {
         return (
           <tr key={idx} className="heroTable-body-row">
             <td className={bodyCol}>
-              <span><img className="heroTable-body-col-span-img" src={items.thumbnail}/></span>{items.real_name}</td>
+              <span><img className={spanImg} src={items.thumbnail}/></span>{items.real_name}
+            </td>
             {td(items.superhero_name)}
             {td(items.tier)}
             {td(items.publisher)}
@@ -32,11 +30,7 @@ class HeroTable extends React.Component {
     };
 
     const headerClass = 'heroTable-header';
-    const th = childText => {
-      return (
-        <th className={headerClass}>{childText}</th>
-      );
-    };
+    const th = childText => (<th className={headerClass}>{childText}</th>);
 
     return (
       <table className="heroTable">
