@@ -8,29 +8,44 @@ class HeroTable extends React.Component {
   }
 
   render() {
+    const bodyCol = 'heroTable-body-col';
+
+    const td = children => {
+      return (
+        <td className={bodyCol}>{children}</td>
+      );
+    };
 
     const render_table = props => {
+
       return props.map((items, idx) => {
         return (
           <tr key={idx} className="heroTable-body-row">
-            <td className="heroTable-body-col">
+            <td className={bodyCol}>
               <span><img className="heroTable-body-col-span-img" src={items.thumbnail}/></span>{items.real_name}</td>
-            <td className="heroTable-body-col">{items.superhero_name}</td>
-            <td className="heroTable-body-col">{items.tier}</td>
-            <td className="heroTable-body-col">{items.publisher}</td>
+            {td(items.superhero_name)}
+            {td(items.tier)}
+            {td(items.publisher)}
           </tr>
         );
       });
+    };
+
+    const headerClass = 'heroTable-header';
+    const th = childText => {
+      return (
+        <th className={headerClass}>{childText}</th>
+      );
     };
 
     return (
       <table className="heroTable">
         <thead className="heroTable-head">
           <tr>
-            <th className="heroTable-header">Real Name</th>
-            <th className="heroTable-header">Super Name</th>
-            <th className="heroTable-header">Tier Level</th>
-            <th className="heroTable-header">Publisher</th>
+            {th('Real Name')}
+            {th('Super Name')}
+            {th('Tier Level')}
+            {th('Publisher')}
           </tr>
         </thead>
         <tbody className="heroTable-body">
