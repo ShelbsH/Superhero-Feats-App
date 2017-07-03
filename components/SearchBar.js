@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -62,8 +63,7 @@ class SearchBar extends React.Component {
     const autoComplete = renderHeroList(this.props.data);
 
     return (
-      <div className="auto-complete">
-        <p>Search for character:</p>
+      <div className="form-group auto-complete">
         <input type="text" onKeyUp={this.keyChange}/>
         <ul>
           {autoComplete}
