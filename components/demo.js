@@ -3,7 +3,6 @@ import SearchBar from './SearchBar';
 import HeroTable from './Hero_Table.js';
 import PropTypes from 'prop-types';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/components/demo.scss';
 import '../styles/main.scss';
 
