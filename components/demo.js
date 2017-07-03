@@ -1,8 +1,11 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import HeroTable from './Hero_Table.js';
-import '../styles/main.scss';
 import PropTypes from 'prop-types';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/components/demo.scss';
+import '../styles/main.scss';
 
 class Demo extends React.Component {
   constructor(props) {
@@ -12,9 +15,12 @@ class Demo extends React.Component {
   render() {
     return (
       <div className="app-root">
-        <h1>Superhero Feats</h1>
-        <SearchBar data={this.props.showData} />
-        <HeroTable data={this.props.showData} />
+        <nav className="navbar navbar-default navbar-fixed-top heroNavBar">
+          <h1 className="heroNavBar-h1">Superhero Feats</h1>
+          <div className="container-fluid"></div>
+        </nav>
+        <SearchBar data={this.props.showData}/>
+        <HeroTable data={this.props.showData}/>
       </div>
     );
   }
