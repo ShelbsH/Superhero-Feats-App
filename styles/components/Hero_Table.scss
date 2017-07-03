@@ -1,17 +1,10 @@
 @import '../modules/variables.scss';
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500');
 
-@function addBackground($url) {
+@function getImage($url) {
   @return '/.../images/' + $url;
 }
 
-body {
-    background-color: #242424;
-}
-div {
-    margin: 0 70px;
-    margin-top: 45px;
-}
 .heroTable {
     background-color: $table-background;
     border-radius: 1.5rem 1.5rem 0 0;
@@ -36,13 +29,13 @@ div {
     border-top: none;
 }
 .heroTable-body-row {
-    background: url(addBackground('row_background_4_03.png'));
+    background: url(getImage('row_background_4_03.png'));
     border: 1px solid $heroBorder-color;
     :first-child {
         text-align: left;
     }
     &:hover {
-      background: url(addBackground('row_background_hover_03.png'));
+      background: url(getImage('row_background_hover_03.png'));
     }
 }
 .heroTable-body-col {
