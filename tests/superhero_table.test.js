@@ -28,7 +28,7 @@ describe('Superhero Table', () => {
         tier: 'Street Levevler',
         publisher: 'Marvel'
       }
-    ]
+    ];
 
     wrapper = shallow(<HeroTable data={superhero_data}/>);
 
