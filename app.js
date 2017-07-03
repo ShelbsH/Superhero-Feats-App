@@ -43,7 +43,38 @@ document.addEventListener('DOMContentLoaded', () => {
       superhero_name: 'Daredevil',
       tier: 'Street Levevler',
       publisher: 'Marvel'
+    },{
+      thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
+      real_name: 'Matthew Murdock',
+      superhero_name: 'Daredevil',
+      tier: 'Street Levevler',
+      publisher: 'Marvel'
+    },{
+      thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
+      real_name: 'Matthew Murdock',
+      superhero_name: 'Daredevil',
+      tier: 'Street Levevler',
+      publisher: 'Marvel'
+    },{
+      thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
+      real_name: 'Matthew Murdock',
+      superhero_name: 'Daredevil',
+      tier: 'Street Levevler',
+      publisher: 'Marvel'
+    },{
+      thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
+      real_name: 'Matthew Murdock',
+      superhero_name: 'Daredevil',
+      tier: 'Street Levevler',
+      publisher: 'Marvel'
+    },{
+      thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
+      real_name: 'Matthew Murdock',
+      superhero_name: 'Daredevil',
+      tier: 'Street Levevler',
+      publisher: 'Marvel'
     }
+    
   ];
 
   ReactDOM.render(
