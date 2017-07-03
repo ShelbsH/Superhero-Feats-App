@@ -1,0 +1,13 @@
+@import '../modules/variables.scss';
+
+.heroNavBar {
+  background-color: $nav-background;
+  border: none;
+  box-shadow: 0px 4px 10px 3px rgba(0,0,0,0.5);
+  color: $text-color;
+  height: 7.5rem;
+}
+
+.heroNavBar-h1 {
+  font-size: 3.0rem;
+}
