@@ -46,7 +46,7 @@ class SearchBar extends React.Component {
     /**
      * @method renderHeroList
      * @param  {Array} props - will be passed as an array when the component is called
-     * @return  {Array} Return the lists of names and render the elements 
+     * @return  {Array} Return the lists of names and render the elements
      */
     const renderHeroList = props => {
       const getHeroNames = returnHeroNamesOnKey(props);
@@ -63,12 +63,14 @@ class SearchBar extends React.Component {
     const autoComplete = renderHeroList(this.props.data);
 
     return (
-      <div className="form-group searchBar auto-complete">
-        <input type="text" onKeyUp={this.keyChange}/>
+      <form className="navbar-form navbar-nav searchBar">
+        <div className="form-group searchBar-div">
+          <input type="text" className="searchBar-inputText" onKeyUp={this.keyChange} placeholder="Search"/>
+        </div>
         <ul>
           {autoComplete}
         </ul>
-      </div>
+      </form>
     );
   }
 }
