@@ -1,3 +1,22 @@
+@import '../modules/variables.scss';
+
 .searchBar {
-  padding-top: 7.5rem;
+    padding-top: .73rem;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.searchBar-inputText {
+    background: url("/../images/search_icon.png") no-repeat right 2.1rem center;
+    background-color: $input-backgroundColor;
+    background-size: 2.2rem;
+    border: none;
+    color: $input-textColor;
+    font-size: 1.8rem;
+    height: 4.5rem;
+    outline: none;
+    padding-left: 4.5rem;
+    width: 49.9rem;
 }

@@ -15,10 +15,13 @@ class Demo extends React.Component {
     return (
       <div className="app-root">
         <nav className="navbar navbar-default navbar-fixed-top heroNavBar">
-          <h1 className="heroNavBar-h1">Superhero Feats</h1>
-          <div className="container-fluid"></div>
+          <div className="container-fluid">
+            <div className="navbar-header">
+              <h1 className="heroNavBar-h1">Superhero Feats</h1>
+            </div>
+            <SearchBar data={this.props.showData}/>
+          </div>
         </nav>
-        <SearchBar data={this.props.showData}/>
         <HeroTable data={this.props.showData}/>
       </div>
     );
