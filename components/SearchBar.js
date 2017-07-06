@@ -36,7 +36,7 @@ class SearchBar extends React.Component {
           let realName = curr.real_name.toLowerCase();
 
           if (keyInput.indexOf(realName.slice(0, keyLength)) === 0) {
-            acc.push(realName);
+            acc.push(curr.real_name);
           }
           return acc;
         }, []);
@@ -54,7 +54,7 @@ class SearchBar extends React.Component {
       if (this.state.keyValues) {
         return getHeroNames.map((item, index) => {
           return (
-            <li key={index}>{item}</li>
+            <li className="auto-complete-li" key={index}>{item}</li>
           );
         });
       }
@@ -64,12 +64,12 @@ class SearchBar extends React.Component {
 
     return (
       <form className="navbar-form navbar-nav searchBar">
-        <div className="form-group searchBar-div">
+        <div className="form-group">
           <input type="text" className="searchBar-inputText" onKeyUp={this.keyChange} placeholder="Search"/>
+          <ul className="auto-complete">
+            {autoComplete}
+          </ul>
         </div>
-        <ul>
-          {autoComplete}
-        </ul>
       </form>
     );
   }
