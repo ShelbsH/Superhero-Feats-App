@@ -33,6 +33,7 @@
 .heroTable-body-row {
     background: url(getImage('row_background_4_03.png'));
     border: 1px solid $heroBorder-color;
+    cursor: pointer;
     :first-child {
         text-align: left;
     }
