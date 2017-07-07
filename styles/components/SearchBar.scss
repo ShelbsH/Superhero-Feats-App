@@ -15,7 +15,7 @@
     background-size: 2.2rem;
     border: none;
     color: $input-textColor;
-    font-family: 'Roboto', Arial;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.8rem;
     height: 4.5rem;
     outline: none;
@@ -33,9 +33,9 @@
 }
 
 .auto-complete-li {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', serif;
     font-weight: bold;
-    color: #333333;
+    color: $input-textColor;
     background-color: #f9f9f9;
     padding: 1.2rem;
     &:hover {
