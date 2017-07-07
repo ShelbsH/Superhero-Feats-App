@@ -14,7 +14,7 @@ class Demo extends React.Component {
   render() {
     return (
       <div className="app-root">
-        <nav className="navbar navbar-default navbar-fixed-top heroNavBar">
+        <nav className="navbar navbar-fixed-top heroNavBar">
           <div className="container-fluid">
             <div className="navbar-header">
               <h1 className="heroNavBar-h1">Superhero Feats</h1>
