@@ -7,36 +7,28 @@ class HeroTable extends React.Component {
   constructor(props) {
     super(props);
 
-    this.heroHandler = this
-      .heroHandler
-      .bind(this);
+    this.onRowClicked = this.onRowClicked.bind(this);
     this.state = {
-      heroClicked: false
+      isRowClicked: false
     }
   }
 
-  heroHandler(evt) {
-    this.props.showHeroData(evt.currentTarget.getAttribute('data-index'));
-    this.setState({heroClicked: true});
+  onRowClicked(e) {
+    this.props.showHeroData(e.currentTarget.getAttribute('data-index'));
+    this.setState({isRowClicked: true});
   }
 
   render() {
     const bodyCol = 'heroTable-body-col';
     const spanImg = 'heroTable-body-col-span-img';
+    const isClicked = this.state.isRowClicked;
 
-    const td = children => (
-      <td className={bodyCol}>{children}</td>
-    );
+    const td = children => (<td className={bodyCol}>{children}</td>);
 
-    const render_table = props => {
-
+    const render_body = props => {
       return props.map((items, idx) => {
         return (
-          <tr
-            key={idx}
-            className="heroTable-body-row"
-            data-index={idx}
-            onClick={this.heroHandler}>
+          <tr key={idx} className="heroTable-body-row" data-index={idx} onClick={this.onRowClicked}>
             <td className={bodyCol}>
               <span><img className={spanImg} src={items.thumbnail}/></span>{items.real_name}
             </td>
@@ -47,14 +39,12 @@ class HeroTable extends React.Component {
         );
       });
     };
-
+    
     const headerClass = 'heroTable-header';
-    const th = childText => (
-      <th className={headerClass}>{childText}</th>
-    );
+    const th = childText => (<th className={headerClass}>{childText}</th>);
 
-    return (
-      <div>
+    const render_table = () => {
+      return (
         <table className="heroTable">
           <thead className="heroTable-head">
             <tr>
@@ -65,17 +55,21 @@ class HeroTable extends React.Component {
             </tr>
           </thead>
           <tbody className="heroTable-body">
-            {render_table(this.props.data)}
+            {render_body(this.props.data)}
           </tbody>
         </table>
-        <HeroPage displayHero={this.props.displayHero} />
-      </div>
+      )
+    }
+
+    return (
+        isClicked ? <HeroPage displayHero={this.props.displayHero}/> : render_table()
     );
   }
 }
 
 HeroTable.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
+  displayHero: PropTypes.array
 };
 
 export default HeroTable;
