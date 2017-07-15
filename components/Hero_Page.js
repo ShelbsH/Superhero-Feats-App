@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/components/Hero_Page.scss';
 
 class HeroPage extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class HeroPage extends React.Component {
   render() {
     console.log(this.props.displayHero);
     return(
-      <div>
+      <div className="heroPage">
         <h1>Welcome to the character profile page</h1>
         <p>{this.props.displayHero}</p>
       </div>
