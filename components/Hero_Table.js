@@ -10,7 +10,7 @@ class HeroTable extends React.Component {
     this.onRowClicked = this.onRowClicked.bind(this);
     this.state = {
       isRowClicked: false
-    }
+    };
   }
 
   onRowClicked(e) {
@@ -58,8 +58,8 @@ class HeroTable extends React.Component {
             {render_body(this.props.data)}
           </tbody>
         </table>
-      )
-    }
+      );
+    };
 
     return (
         isClicked ? <HeroPage displayHero={this.props.displayHero}/> : render_table()
@@ -69,7 +69,8 @@ class HeroTable extends React.Component {
 
 HeroTable.propTypes = {
   data: PropTypes.array,
-  displayHero: PropTypes.array
+  displayHero: PropTypes.array,
+  showHeroData: PropTypes.func
 };
 
 export default HeroTable;
