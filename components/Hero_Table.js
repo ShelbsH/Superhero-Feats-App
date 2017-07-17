@@ -62,14 +62,14 @@ class HeroTable extends React.Component {
     };
 
     return (
-        isClicked ? <HeroPage displayHero={this.props.displayHero}/> : render_table()
+        isClicked ? <HeroPage showHero={this.props.showHero}/> : render_table()
     );
   }
 }
 
 HeroTable.propTypes = {
   data: PropTypes.array,
-  displayHero: PropTypes.array,
+  showHero: PropTypes.array,
   showHeroData: PropTypes.func
 };
 
