@@ -8,14 +8,24 @@ class HeroPage extends React.Component {
   }
 
   render() {
-    console.log(this.props.displayHero);
+    const charInformation = this.props.displayHero.map((list, idx) => {
+      return (
+        <h1 key={idx}><li>{list}</li></h1>
+      );
+    });
     return(
       <div className="heroPage">
-        <h1>Welcome to the character profile page</h1>
-        <p>{this.props.displayHero}</p>
+        <h1>Character profile page</h1>
+        <ul>
+          {charInformation}
+        </ul>
       </div>
-    )
+    );
   }
 }
+
+HeroPage.propTypes = {
+  displayHero: PropTypes.array
+};
 
 export default HeroPage;
