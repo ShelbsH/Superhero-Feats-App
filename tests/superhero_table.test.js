@@ -72,9 +72,17 @@ describe('Superhero Table', () => {
   });
 
   it('should be able to load up the HeroPage component when a row is clicked', () => {
+    const mockTargetIndex = 5;
     const foo = shallow(<HeroTable data={superhero_data} />);
     const tr = foo.find('tbody').find('tr').at(0);
-    tr.simulate('click');
+    tr.simulate('click', {
+      currentTarget: {
+        dataset: {
+          index: mockTargetIndex
+        }
+      }
+    });
+    expect
     //Logs an error when simulating the click event. "Cannot read property of currentTarget is undefined"
   });
 });

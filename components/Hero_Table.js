@@ -13,10 +13,13 @@ class HeroTable extends React.Component {
     };
   }
 
-  onRowClicked(e) {
-    this.props.showHeroData(e.currentTarget.getAttribute('data-index'));
+  onRowClicked({currentTarget}) {
+
+    this.props.showHeroData(currentTarget.dataset.index);
     this.setState({isRowClicked: true});
   }
+
+
 
   render() {
     const bodyCol = 'heroTable-body-col';
@@ -39,7 +42,7 @@ class HeroTable extends React.Component {
         );
       });
     };
-    
+
     const headerClass = 'heroTable-header';
     const th = childText => (<th className={headerClass}>{childText}</th>);
 
