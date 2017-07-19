@@ -1,14 +1,14 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import HeroTable from '../components/Hero_Table';
+import HeroPage from '../components/Hero_Page';
 
 describe('Superhero Table', () => {
   let wrapper;
   let superhero_data;
   let firstRowNode;
 
-  beforeEach(() => {
-    superhero_data = [
+  superhero_data = [
       {
         thumbnail: 'http://tse2.mm.bing.net/th?id=OIP.zQxxTe2BewqNhEF6_FEVmQEJEs&pid=15.1',
         real_name: 'Clark Kent',
@@ -30,7 +30,7 @@ describe('Superhero Table', () => {
       }
     ];
 
-    wrapper = shallow(<HeroTable data={superhero_data}/>);
+    wrapper = shallow(<HeroTable data={superhero_data} />);
 
     // Get the first node to retrieve the collections of "td" elements to match the
     // length the "superhero_data" array for testing.
@@ -39,7 +39,6 @@ describe('Superhero Table', () => {
       .find('tr')
       .first()
       .children();
-  });
 
   it('should be able to match the equal amount of properties from the superhero_data', () => {
     expect(firstRowNode).toHaveLength(4);
@@ -70,5 +69,12 @@ describe('Superhero Table', () => {
 
   it('needs to successfully render the publisher', () => {
     expect(firstRowNode.at(3).text()).toBe(superhero_data[0].publisher);
+  });
+
+  it('should be able to load up the HeroPage component when a row is clicked', () => {
+    const foo = shallow(<HeroTable data={superhero_data} />);
+    const tr = foo.find('tbody').find('tr').at(0);
+    tr.simulate('click');
+    //Logs an error when simulating the click event. "Cannot read property of currentTarget is undefined"
   });
 });
