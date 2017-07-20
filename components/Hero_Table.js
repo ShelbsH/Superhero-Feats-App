@@ -8,24 +8,19 @@ class HeroTable extends React.Component {
     super(props);
 
     this.onRowClicked = this.onRowClicked.bind(this);
-    this.state = {
-      isRowClicked: false
-    };
   }
 
-  onRowClicked(e) {
-    this.props.showHeroData(e.currentTarget.getAttribute('data-index'));
-    this.setState({isRowClicked: true});
+  onRowClicked({currentTarget}) {
+    this.props.showHeroData(currentTarget.dataset.index);
   }
 
   render() {
     const bodyCol = 'heroTable-body-col';
     const spanImg = 'heroTable-body-col-span-img';
-    const isClicked = this.state.isRowClicked;
 
     const td = children => (<td className={bodyCol}>{children}</td>);
 
-    const render_body = props => {
+    const render_tBody = props => {
       return props.map((items, idx) => {
         return (
           <tr key={idx} className="heroTable-body-row" data-index={idx} onClick={this.onRowClicked}>
@@ -43,7 +38,7 @@ class HeroTable extends React.Component {
     const headerClass = 'heroTable-header';
     const th = childText => (<th className={headerClass}>{childText}</th>);
 
-    const render_table = () => {
+    const render_HeroTable = () => {
       return (
         <table className="heroTable">
           <thead className="heroTable-head">
@@ -55,21 +50,25 @@ class HeroTable extends React.Component {
             </tr>
           </thead>
           <tbody className="heroTable-body">
-            {render_body(this.props.data)}
+            {render_tBody(this.props.data)}
           </tbody>
         </table>
       );
     };
 
+    const showHeroPageIfClicked = () => {
+      return this.props.heroPageData ? <HeroPage heroPageData={this.props.heroPageData} /> : render_HeroTable();
+    };
+
     return (
-        isClicked ? <HeroPage showHero={this.props.showHero}/> : render_table()
+      showHeroPageIfClicked()
     );
   }
 }
 
 HeroTable.propTypes = {
   data: PropTypes.array,
-  showHero: PropTypes.array,
+  heroPageData: PropTypes.array,
   showHeroData: PropTypes.func
 };
 

@@ -14,7 +14,7 @@ class Demo extends React.Component {
     this.showHeroHandler = this.showHeroHandler.bind(this);
 
     this.state = {
-      heroData: null
+      heroData: undefined
     };
   }
 
@@ -37,7 +37,7 @@ class Demo extends React.Component {
             <SearchBar data={this.props.showData}/>
           </div>
         </nav>
-        <HeroTable data={this.props.showData} showHeroData={this.showHeroHandler} showHero={this.state.heroData}/>
+        <HeroTable data={this.props.showData} showHeroData={this.showHeroHandler} heroPageData={this.state.heroData}/>
       </div>
     );
   }

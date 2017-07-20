@@ -8,7 +8,7 @@ class HeroPage extends React.Component {
   }
 
   render() {
-    const charInfo = this.props.showHero.map((list, idx) => {
+    const charInfo = this.props.heroPageData.map((list, idx) => {
       return (
         <h2 key={idx}>
           <li>{list.thumbnail}</li>
@@ -31,7 +31,7 @@ class HeroPage extends React.Component {
 }
 
 HeroPage.propTypes = {
-  showHero: PropTypes.array
+  heroPageData: PropTypes.array
 };
 
 export default HeroPage;
