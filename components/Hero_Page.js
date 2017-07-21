@@ -10,13 +10,13 @@ class HeroPage extends React.Component {
   render() {
     const charInfo = this.props.heroPageData.map((list, idx) => {
       return (
-        <h2 key={idx}>
+        <div key={idx}>
           <li>{list.thumbnail}</li>
           <li>{list.real_name}</li>
           <li>{list.superhero_name}</li>
           <li>{list.tier}</li>
           <li>{list.publisher}</li>
-        </h2>
+        </div>
       );
     });
     return(

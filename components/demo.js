@@ -20,10 +20,8 @@ class Demo extends React.Component {
 
   showHeroHandler(index) {
     const showHeroData = [this.props.showData[index]];
-    
-    this.setState({
-      heroData: showHeroData
-    });
+
+    this.setState({heroData: showHeroData});
   }
 
   render() {
@@ -37,7 +35,10 @@ class Demo extends React.Component {
             <SearchBar data={this.props.showData}/>
           </div>
         </nav>
-        <HeroTable data={this.props.showData} showHeroData={this.showHeroHandler} heroPageData={this.state.heroData}/>
+        <HeroTable
+          data={this.props.showData}
+          showHeroData={this.showHeroHandler}
+          heroPageData={this.state.heroData}/>
       </div>
     );
   }
