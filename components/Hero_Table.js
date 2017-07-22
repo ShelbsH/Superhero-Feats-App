@@ -23,7 +23,7 @@ class HeroTable extends React.Component {
     const render_tBody = props => {
       return props.map((items, idx) => {
         return (
-          <tr key={idx} className="heroTable-body-row" data-index={idx} onClick={this.onRowClicked}>
+          <tr key={idx} className="heroTable-body-row" data-index={items.id} onClick={this.onRowClicked}>
             <td className={bodyCol}>
               <span><img className={spanImg} src={items.thumbnail}/></span>{items.real_name}
             </td>
@@ -35,10 +35,8 @@ class HeroTable extends React.Component {
       });
     };
 
-
     const headerClass = 'heroTable-header';
     const HeroHeader = ({childText}) => <th className={headerClass}>{childText}</th>;
-    // const th = childText => (<th className={headerClass}>{childText}</th>);
 
     const render_HeroTable = () => {
       return (
