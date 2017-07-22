@@ -34,19 +34,21 @@ class HeroTable extends React.Component {
         );
       });
     };
-    
+
+
     const headerClass = 'heroTable-header';
-    const th = childText => (<th className={headerClass}>{childText}</th>);
+    const HeroHeader = ({childText}) => <th className={headerClass}>{childText}</th>;
+    // const th = childText => (<th className={headerClass}>{childText}</th>);
 
     const render_HeroTable = () => {
       return (
         <table className="heroTable">
           <thead className="heroTable-head">
             <tr>
-              {th('Real Name')}
-              {th('Super Name')}
-              {th('Tier Level')}
-              {th('Publisher')}
+              <HeroHeader childText='Real Name'/>
+              <HeroHeader childText='Super Name'/>
+              <HeroHeader childText='Tier Level'/>
+              <HeroHeader childText='Publisher'/>
             </tr>
           </thead>
           <tbody className="heroTable-body">
