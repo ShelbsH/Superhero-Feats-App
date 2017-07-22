@@ -7,17 +7,21 @@ class SearchBar extends React.Component {
     super(props);
     this.displayName = 'SearchBar';
 
-    this.keyChange = this
-      .keyChange
-      .bind(this);
+    this.keyChange = this.keyChange.bind(this);
+
+    this.onAutoCompleteClick = this.onAutoCompleteClick.bind(this);
 
     this.state = {
       keyValues: ''
     };
   }
 
-  keyChange(evt) {
-    this.setState({keyValues: evt.target.value});
+  keyChange({target}) {
+    this.setState({keyValues: target.value});
+  }
+
+  onAutoCompleteClick({currentTarget}) {
+    this.props.showHeroData(currentTarget.dataset.index);
   }
 
   render() {
@@ -25,7 +29,7 @@ class SearchBar extends React.Component {
     /**
      * @method returnHeroNamesOnKey
      * @param  {Array} heroNames - will be passed as an array argument
-     * @return {Array} Return the array list of names that match the input keys
+     * @return {Array} Return an array list of objects that match the input keys
      */
     const returnHeroNamesOnKey = heroNames => {
       let keyInput = this.state.keyValues.toLowerCase();
@@ -36,7 +40,7 @@ class SearchBar extends React.Component {
           let realName = curr.real_name.toLowerCase();
 
           if (keyInput.indexOf(realName.slice(0, keyLength)) === 0) {
-            acc.push(curr.real_name);
+            acc.push(curr);
           }
           return acc;
         }, []);
@@ -54,7 +58,7 @@ class SearchBar extends React.Component {
       if (this.state.keyValues) {
         return getHeroNames.map((item, index) => {
           return (
-            <li className="auto-complete-li" key={index}>{item}</li>
+            <li className="auto-complete-li" key={index} data-index={item.id} onClick={this.onAutoCompleteClick}>{item.real_name} as {item.superhero_name}</li>
           );
         });
       }
@@ -63,20 +67,23 @@ class SearchBar extends React.Component {
     const autoComplete = renderHeroList(this.props.data);
 
     return (
-      <form className="navbar-form navbar-nav searchBar">
+      <div>
+        <form className="navbar-form navbar-nav searchBar">
         <div className="form-group">
           <input type="text" className="searchBar-inputText" onKeyUp={this.keyChange} placeholder="Search"/>
           <ul className="auto-complete">
             {autoComplete}
           </ul>
         </div>
-      </form>
+        </form>
+      </div>
     );
   }
 }
 
 SearchBar.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
+  showHeroData: PropTypes.func
 };
 
 export default SearchBar;
