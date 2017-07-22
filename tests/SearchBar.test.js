@@ -62,7 +62,7 @@ describe('The Search Bar Component will display data from Superheroes', () => {
     });
     expect(wrapper.state().keyValues).toBe('clark');
     expect(wrapper.find('li').length).toBe(1);
-    expect(wrapper.find('li').text()).toBe('Clark Kent');
+    expect(wrapper.find('li').text()).toBe('Clark Kent as Superman');
 
   });
 });
