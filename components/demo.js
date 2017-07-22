@@ -18,10 +18,15 @@ class Demo extends React.Component {
     };
   }
 
-  showHeroHandler(index) {
-    const showHeroData = [this.props.showData[index]];
+  showHeroHandler(id) {
 
-    this.setState({heroData: showHeroData});
+    //Needs to be refactored: replace the showData props with a parameter.
+    const showHeroData = (heroId) => this.props.showData.filter((item) => item.id === heroId);
+    const getHeroData = showHeroData(id);
+
+    this.setState({
+      heroData: getHeroData
+    });
   }
 
   render() {
@@ -32,7 +37,7 @@ class Demo extends React.Component {
             <div className="navbar-header">
               <h1 className="heroNavBar-h1">Superhero Feats</h1>
             </div>
-            <SearchBar data={this.props.showData}/>
+            <SearchBar data={this.props.showData} showHeroData={this.showHeroHandler} />
           </div>
         </nav>
         <HeroTable
