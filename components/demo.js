@@ -19,13 +19,11 @@ class Demo extends React.Component {
   }
 
   showHeroHandler(id) {
-
-    //Needs to be refactored: replace the showData props with a parameter.
-    const showHeroData = (heroId) => this.props.showData.filter((item) => item.id === heroId);
-    const getHeroData = showHeroData(id);
+    const getHeroData = (data, heroId) => data.filter((item) => item.id === heroId);
+    const showHeroData = getHeroData(this.props.showData, id);
 
     this.setState({
-      heroData: getHeroData
+      heroData: showHeroData
     });
   }
 
