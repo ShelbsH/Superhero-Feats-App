@@ -8,7 +8,6 @@ class SearchBar extends React.Component {
     this.displayName = 'SearchBar';
 
     this.keyChange = this.keyChange.bind(this);
-
     this.onAutoCompleteClick = this.onAutoCompleteClick.bind(this);
 
     this.state = {
@@ -58,7 +57,12 @@ class SearchBar extends React.Component {
       if (this.state.keyValues) {
         return getHeroNames.map((item, index) => {
           return (
-            <li className="auto-complete-li" key={index} data-index={item.id} onClick={this.onAutoCompleteClick}>{item.real_name} as {item.superhero_name}</li>
+            <li
+              className="auto-complete-li"
+              key={index}
+              data-index={item.id}
+              onClick={this.onAutoCompleteClick}>{item.real_name} as {item.superhero_name}
+            </li>
           );
         });
       }
@@ -69,12 +73,16 @@ class SearchBar extends React.Component {
     return (
       <div>
         <form className="navbar-form navbar-nav searchBar">
-        <div className="form-group">
-          <input type="text" className="searchBar-inputText" onKeyUp={this.keyChange} placeholder="Search"/>
-          <ul className="auto-complete">
-            {autoComplete}
-          </ul>
-        </div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="searchBar-inputText"
+              onKeyUp={this.keyChange}
+              placeholder="Search"/>
+            <ul className="auto-complete">
+              {autoComplete}
+            </ul>
+          </div>
         </form>
       </div>
     );
