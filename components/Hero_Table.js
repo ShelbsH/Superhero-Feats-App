@@ -18,7 +18,7 @@ class HeroTable extends React.Component {
     const bodyCol = 'heroTable-body-col';
     const spanImg = 'heroTable-body-col-span-img';
 
-    const td = children => (<td className={bodyCol}>{children}</td>);
+    const HeroBody = ({childText}) => (<td className={bodyCol}>{childText}</td>);
 
     const render_tBody = props => {
       return props.map((items, idx) => {
@@ -27,9 +27,9 @@ class HeroTable extends React.Component {
             <td className={bodyCol}>
               <span><img className={spanImg} src={items.thumbnail}/></span>{items.real_name}
             </td>
-            {td(items.superhero_name)}
-            {td(items.tier)}
-            {td(items.publisher)}
+            <HeroBody childText={items.superhero_name} />
+            <HeroBody childText={items.tier} />
+            <HeroBody childText={items.publisher} />
           </tr>
         );
       });
