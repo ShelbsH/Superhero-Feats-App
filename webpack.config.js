@@ -29,9 +29,6 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    open: true
-  },
   plugins: [
     new extractTextPlugin('styles.css')
   ]
