@@ -26,10 +26,21 @@ class HeroPage extends React.Component {
 
     return (
       <div className="heroPage">
-        <h1>Character profile page</h1>
-        <ul>
-          {charInfo()}
-        </ul>
+        <div className="wrapper">
+          <nav className="heroSidebar">
+            <div className="heroSidebar-profile">
+              <div className="heroSidebar-profile-icon">
+                <img src="../images/sidebar_icon.png" />
+              </div>
+              <div className="heroSidebar-profile-char">
+                <img className="heroSidebar-profile-img" src="https://static.comicvine.com/uploads/scale_small/4/46646/4575457-7128683111-GLLA_.jpg" />
+              </div>
+            </div>
+            <ul className="sidebar-nav">
+              {charInfo()}
+            </ul>
+          </nav>
+        </div>
       </div>
     );
   }
