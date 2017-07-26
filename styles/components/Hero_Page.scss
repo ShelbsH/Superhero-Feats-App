@@ -2,4 +2,34 @@
 
 .heroPage {
   color: $text-color;
+  margin-top: 9rem;
+}
+
+.heroSidebar {
+  width: 202px;
+  background-color: #383838;
+}
+
+.heroSidebar-profile {
+  width: 20.2rem;
+  height: 27.4rem;
+}
+
+.heroSidebar-profile-icon {
+  height: 5.6rem;
+  text-align: right;
+  padding-top: 2.1rem;
+  padding-right: 1.7rem;
+}
+
+.heroSidebar-profile-char {
+  margin-top: 2.5rem;
+  width: 20.2rem;
+  height: 21.8rem;
+  text-align: center;
+}
+
+.heroSidebar-profile-img {
+  width: 8.8rem;
+  height: 8.8rem;
 }
