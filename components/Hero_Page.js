@@ -13,11 +13,10 @@ class HeroPage extends React.Component {
         return this.props.heroPageData.map((list, idx) => {
           return (
             <div key={idx}>
-              <li>{list.thumbnail}</li>
-              <li>{list.real_name}</li>
-              <li>{list.superhero_name}</li>
-              <li>{list.tier}</li>
-              <li>{list.publisher}</li>
+              <li className="heroSidebar-li">{list.real_name}</li>
+              <li className="heroSidebar-li">{list.superhero_name}</li>
+              <li className="heroSidebar-li">{list.tier}</li>
+              <li className="heroSidebar-li">{list.publisher}</li>
             </div>
           );
         });
@@ -33,12 +32,19 @@ class HeroPage extends React.Component {
                 <img src="../images/sidebar_icon.png" />
               </div>
               <div className="heroSidebar-profile-char">
-                <img className="heroSidebar-profile-img" src="https://static.comicvine.com/uploads/scale_small/4/46646/4575457-7128683111-GLLA_.jpg" />
+                <img className="heroSidebar-profile-img" src="../images/carol_danvers_profile.png" />
+                <h2 className="heroSidebar-profile-char-h1">Carol Danvers</h2>
+                <h2 className="heroSidebar-profile-char-h1">As</h2>
+                <h2 className="heroSidebar-profile-char-h1">Captain Marvel</h2>
+              </div>
+              <div className="heroSidebar-profile-category">
+                <ul className="heroSidebar-ul">
+                  {charInfo()}
+                  <li className="heroSidebar-li">Martial Arts/Training</li>
+                  <li className="heroSidebar-li">Power/Strength</li>
+                </ul>
               </div>
             </div>
-            <ul className="sidebar-nav">
-              {charInfo()}
-            </ul>
           </nav>
         </div>
       </div>
