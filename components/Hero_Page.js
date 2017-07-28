@@ -8,44 +8,77 @@ class HeroPage extends React.Component {
   }
 
   render() {
-    const charInfo = () => {
-      if (Array.isArray(this.props.heroPageData)) {
-        return this.props.heroPageData.map((list, idx) => {
-          return (
-            <div key={idx}>
-              <li className="heroSidebar-li">{list.real_name}</li>
-              <li className="heroSidebar-li">{list.superhero_name}</li>
-              <li className="heroSidebar-li">{list.tier}</li>
-              <li className="heroSidebar-li">{list.publisher}</li>
+    const categoryList = [
+      'Stength/Power',
+      'Speed/Agility',
+      'Martial Arts/Training',
+      'Skills/Fights',
+      'Durability',
+      'Misc'
+    ];
+
+    const HeroCategory = ({featsCategory}) => <li className="heroSidebar-li">{featsCategory}</li>
+
+    const HeroCategoryList = () => {
+      return (
+        <ul className="heroSidebar-ul">
+          {categoryList.map((list, index) => <HeroCategory key={index} featsCategory={list}/>)}
+        </ul>
+      );
+    };
+
+    const HeroIcon = ({icon}) => {
+      return (
+        <div className="heroSidebar-profile-icon">
+          <img src={icon}/>
+        </div>
+      );
+    };
+
+    const CharacterInfoSidebar = props => {
+      return (
+        <div className="heroSidebar-profile-char">
+          <img className="heroSidebar-profile-img" src={props.image}/>
+          <h2 className="heroSidebar-h2">{props.realName}</h2>
+          <h2 className="heroSidebar-h2">As</h2>
+          <h2 className="heroSidebar-h2">{props.superName}</h2>
+        </div>
+      );
+    };
+
+    const HeroSidebar = props => {
+      return (
+        <div>
+          <nav className="heroSidebar">
+            <div className="heroSidebar-profile">
+              <HeroIcon icon="../images/sidebar_icon.png"/>
+              <CharacterInfoSidebar
+                realName={props.real_name}
+                superName={props.superhero_name}
+                image="../images/carol_danvers_profile.png"/>
+              <div className="heroSidebar-profile-category">
+                <HeroCategoryList/>
+              </div>
             </div>
-          );
-        });
-      }
+          </nav>
+        </div>
+      );
+    };
+
+    const render_HeroSidebar = props => {
+      return props.map((lists, index) => {
+        return (
+         <HeroSidebar
+            key={index}
+            real_name={lists.real_name}
+            superhero_name={lists.superhero_name} />);
+      });
     };
 
     return (
       <div className="heroPage">
         <div className="wrapper">
-          <nav className="heroSidebar">
-            <div className="heroSidebar-profile">
-              <div className="heroSidebar-profile-icon">
-                <img src="../images/sidebar_icon.png" />
-              </div>
-              <div className="heroSidebar-profile-char">
-                <img className="heroSidebar-profile-img" src="../images/carol_danvers_profile.png" />
-                <h2 className="heroSidebar-profile-char-h1">Carol Danvers</h2>
-                <h2 className="heroSidebar-profile-char-h1">As</h2>
-                <h2 className="heroSidebar-profile-char-h1">Captain Marvel</h2>
-              </div>
-              <div className="heroSidebar-profile-category">
-                <ul className="heroSidebar-ul">
-                  {charInfo()}
-                  <li className="heroSidebar-li">Martial Arts/Training</li>
-                  <li className="heroSidebar-li">Power/Strength</li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+          {render_HeroSidebar(this.props.heroPageData)}
         </div>
       </div>
     );
