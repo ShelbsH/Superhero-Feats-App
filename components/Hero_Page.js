@@ -66,17 +66,19 @@ class HeroPage extends React.Component {
     };
 
     const render_HeroSidebar = props => {
-      return props.map((lists, index) => {
-        return (
-          <HeroSidebar
-            key={index}
-            real_name={lists.real_name}
-            superhero_name={lists.superhero_name}
-            profile_picture={lists.profile_picture} />
-        );
-      });
+      if(Array.isArray(props)) {
+        return props.map((lists, index) => {
+          return (
+            <HeroSidebar
+              key={index}
+              real_name={lists.real_name}
+              superhero_name={lists.superhero_name}
+              profile_picture={lists.profile_picture} />
+          );
+        });
+      };
     };
-
+      
     return (
       <div className="heroPage">
         <div className="wrapper">
