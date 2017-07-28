@@ -17,7 +17,7 @@ class HeroPage extends React.Component {
       'Misc'
     ];
 
-    const HeroCategory = ({featsCategory}) => <li className="heroSidebar-li">{featsCategory}</li>
+    const HeroCategory = ({featsCategory}) => <li className="heroSidebar-li">{featsCategory}</li>;
 
     const HeroCategoryList = () => {
       return (
@@ -39,9 +39,9 @@ class HeroPage extends React.Component {
       return (
         <div className="heroSidebar-profile-char">
           <img className="heroSidebar-profile-img" src={props.image}/>
-          <h2 className="heroSidebar-h2">{props.realName}</h2>
+          <h2 className="heroSidebar-h2">{props.real_name}</h2>
           <h2 className="heroSidebar-h2">As</h2>
-          <h2 className="heroSidebar-h2">{props.superName}</h2>
+          <h2 className="heroSidebar-h2">{props.superhero_name}</h2>
         </div>
       );
     };
@@ -53,9 +53,9 @@ class HeroPage extends React.Component {
             <div className="heroSidebar-profile">
               <HeroIcon icon="../images/sidebar_icon.png"/>
               <CharacterInfoSidebar
-                realName={props.real_name}
-                superName={props.superhero_name}
-                image="../images/carol_danvers_profile.png"/>
+                real_name={props.real_name}
+                superhero_name={props.superhero_name}
+                image={props.profile_picture}/>
               <div className="heroSidebar-profile-category">
                 <HeroCategoryList/>
               </div>
@@ -71,7 +71,8 @@ class HeroPage extends React.Component {
          <HeroSidebar
             key={index}
             real_name={lists.real_name}
-            superhero_name={lists.superhero_name} />);
+            superhero_name={lists.superhero_name} 
+            profile_picture={lists.profile_picture} />);
       });
     };
 
