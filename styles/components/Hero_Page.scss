@@ -1,6 +1,8 @@
 @import '../modules/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Open+Sans');
 
 .heroPage {
+  font-family: 'Playfair Display', 'serif';
   color: $text-color;
   margin-top: 9rem;
 }
@@ -10,6 +12,7 @@
   height: 100%;
   background-color: #383838;
   position: fixed;
+  transition: all .5s;
 }
 
 .heroSidebar-profile {
@@ -31,8 +34,9 @@
   text-align: center;
 }
 
-.heroSidebar-profile-char-h1 {
-  font-size: 1.3rem;
+.heroSidebar-h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
   line-height: .3rem;
 }
 
@@ -45,17 +49,22 @@
 }
 
 .heroSidebar-ul {
+  font-family: 'Open Sans' 'sans-serif';
+  font-size: 1.3rem;
   list-style: none;
-  font-size: 1.5rem;
   background-color: #4c4c4c;
   padding: 0;
 }
 
 .heroSidebar-li {
   display: block;
-  font-size: 1.2rem;
   padding: 1rem 2.292rem;
   &:hover {
     background-color: #747474;
+    cursor: pointer;
   }
+}
+
+.heroSidebar-close {
+  visibility: hidden;
 }
