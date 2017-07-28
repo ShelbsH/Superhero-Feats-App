@@ -17,7 +17,7 @@ class HeroPage extends React.Component {
       'Misc'
     ];
 
-    const HeroCategoryList= ({featsCategory}) => <li className="heroSidebar-li">{featsCategory}</li>;
+    const HeroCategoryList = ({featsCategory}) => <li className="heroSidebar-li">{featsCategory}</li>;
 
     const HeroCategorySidebar = () => {
       return (
@@ -29,10 +29,10 @@ class HeroPage extends React.Component {
       );
     };
 
-    const HeroIconSidebar = ({icon}) => {
+    const HeroIconSidebar = ({iconPng}) => {
       return (
         <div className="heroSidebar-profile-icon">
-          <img src={icon} />
+          <img src={iconPng} />
         </div>
       );
     };
@@ -53,7 +53,7 @@ class HeroPage extends React.Component {
         <div>
           <nav className="heroSidebar">
             <div className="heroSidebar-profile">
-              <HeroIconSidebar icon="../images/sidebar_icon.png" />
+              <HeroIconSidebar iconPng="../images/sidebar_icon.png" />
               <CharacterInfoSidebar
                 real_name={props.real_name}
                 superhero_name={props.superhero_name}
@@ -76,7 +76,7 @@ class HeroPage extends React.Component {
               profile_picture={lists.profile_picture} />
           );
         });
-      };
+      }
     };
       
     return (
