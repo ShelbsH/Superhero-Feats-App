@@ -7,9 +7,7 @@ class HeroPage extends React.Component {
     super(props);
 
     this.state = {
-      click: false,
-      animateSidebar: '',
-      animateMenuIcon: ''
+      click: false
     };
 
     this.onSidebarMenuClick = this.onSidebarMenuClick.bind(this);
@@ -18,15 +16,27 @@ class HeroPage extends React.Component {
   onSidebarMenuClick() {
 
     this.setState({
-      click: true,
-      animateSidebar: ' heroSidebar-animate',
-      animateMenuIcon: ' menuIconDiv-animate'
+      click: !this.state.click
     });
   }
 
   render() {
-    const addAnimateSidebar = this.state.click ? this.state.animateSidebar : '';
-    const addAnimateMenuIcon = this.state.click ? this.state.animateMenuIcon : '';
+
+    const getAnimationClass = (animateForward, animateReverse) => {
+      const getClick = this.state.click;
+      let animate;
+
+      if(getClick) {
+        animate = animateForward;
+      }
+      else {
+        animate = animateReverse;
+      }
+      return animate;
+    };
+
+    const getMenuIconAnimation = getAnimationClass('menuIconDiv-animate', 'menuIconDiv-animate-reverse');
+    const getHeroSidebarAnimation = getAnimationClass('heroSidebar-animate', 'heroSidebar-animate-reverse');
 
     const HeroCategoryList = ({featsCategory}) => <li className="heroSidebar-li">{featsCategory}</li>;
 
@@ -90,10 +100,10 @@ class HeroPage extends React.Component {
     return (
       <div className="heroPage">
         <div className="wrapper">
-          <nav className={'heroSidebar' + addAnimateSidebar}>
+          <nav className={'heroSidebar ' + getHeroSidebarAnimation}>
             {render_HeroSidebar(this.props.heroPageData)}
           </nav>
-          <div className={'heroSidebar-menuIconDiv' + addAnimateMenuIcon}>
+          <div className={'heroSidebar-menuIconDiv ' + getMenuIconAnimation}>
             <img src="../images/sidebar_icon.png" onClick={this.onSidebarMenuClick}/>
           </div>
         </div>
