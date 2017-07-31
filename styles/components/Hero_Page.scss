@@ -8,10 +8,12 @@
 }
 
 .heroSidebar {
+  padding-top: 5.6rem;
   width: 20.2rem;
   height: 100%;
   background-color: #383838;
   position: fixed;
+  transition: all .4s;
 }
 
 .heroSidebar-profile {
@@ -19,14 +21,12 @@
   height: 27.4rem;
 }
 
-.heroSidebar-profile-icon {
+.heroSidebar-menuIcon {
   height: 5.6rem;
   text-align: right;
-  padding-top: 2.1rem;
-  padding-right: 1.7rem;
 }
 
-.heroSidebar-profile-char {
+.heroSidebar-characterDetail {
   margin-top: 2.5rem;
   width: 20.2rem;
   height: 21.8rem;
@@ -39,7 +39,7 @@
   line-height: .3rem;
 }
 
-.heroSidebar-profile-img {
+.heroSidebar-img {
   width: 8.8rem;
   height: 8.8rem;
   border: 3px solid #383838;
@@ -61,5 +61,59 @@
   &:hover {
     background-color: #747474;
     cursor: pointer;
+  }
+}
+
+.hideSidebar {
+  transform: translate(-15rem, 0);
+}
+
+/*This will be the div to animate*/
+.heroSidebar-menuIconDiv {
+  position: absolute;
+  padding-top: 1.5rem;
+  padding-right: 1.7rem;
+  width: 8.0rem;
+  height: 5.6rem;
+  left: calc(20.2rem - 8rem); /*Set the div on the right corner on the Sidebar.*/
+  text-align: right;
+  background-color: #383838;
+  transition: .7s ease all;
+}
+
+.menuIconDiv-animate {
+  animation: animateMenuIconDiv .7s forwards;
+}
+
+.heroSidebar-animate {
+  transform: translateX(-20.2rem);
+  visibility: hidden;
+}
+
+.menuIconDiv-animate-reverse {
+  animation: animateMenuIconDivReverse .7s forwards;
+}
+
+@keyframes animateMenuIconDiv {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20.2rem);
+  }
+  100% {
+    transform: translateX(-12.2rem);
+  }
+}
+
+@keyframes animateMenuIconDivReverse {
+  0% {
+    transform: translateX(-12.2rem);
+  }
+  50% {
+    transform: translateX(-20.2rem);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
