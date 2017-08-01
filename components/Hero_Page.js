@@ -21,22 +21,8 @@ class HeroPage extends React.Component {
   }
 
   render() {
-
-    const getAnimationClass = (animateForward, animateReverse) => {
-      const getClick = this.state.click;
-      let animate;
-
-      if(getClick) {
-        animate = animateForward;
-      }
-      else {
-        animate = animateReverse;
-      }
-      return animate;
-    };
-
-    const getMenuIconAnimation = getAnimationClass('menuIconDiv-animate', 'menuIconDiv-animate-reverse');
-    const getHeroSidebarAnimation = getAnimationClass('heroSidebar-animate', 'heroSidebar-animate-reverse');
+    const isClicked = this.state.click;
+    const getAnimationClass = className => isClicked ? ' ' + className : '';
 
     const HeroCategoryList = ({featsCategory}) => <li className="heroSidebar-li">{featsCategory}</li>;
 
@@ -61,7 +47,7 @@ class HeroPage extends React.Component {
 
     const CharacterInfoSidebar = props => {
       return (
-        <div className="heroSidebar-characterDetail">
+        <div className="heroSidebar-characterDetails">
           <img className="heroSidebar-img" src={props.profile_picture}/>
           <h2 className="heroSidebar-h2">{props.real_name}</h2>
           <h2 className="heroSidebar-h2">As</h2>
@@ -70,10 +56,10 @@ class HeroPage extends React.Component {
       );
     };
 
-    const HeroSidebar = props => {
+    const HeroSidebarContent = props => {
       return (
         <div>
-          <div className="heroSidebar-profile">
+          <div className="heroSidebar-content">
             <CharacterInfoSidebar
               real_name={props.real_name}
               superhero_name={props.superhero_name}
@@ -84,11 +70,11 @@ class HeroPage extends React.Component {
       );
     };
 
-    const render_HeroSidebar = props => {
+    const render_HeroSidebarContent = props => {
       if (Array.isArray(props)) {
         return props.map((lists, index) => {
           return (
-            <HeroSidebar
+            <HeroSidebarContent
               key={index}
               real_name={lists.real_name}
               superhero_name={lists.superhero_name}
@@ -100,11 +86,15 @@ class HeroPage extends React.Component {
     return (
       <div className="heroPage">
         <div className="wrapper">
-          <nav className={'heroSidebar ' + getHeroSidebarAnimation}>
-            {render_HeroSidebar(this.props.heroPageData)}
+          <nav className={`heroSidebar${getAnimationClass('heroSidebar-hide')}`}>
+            {render_HeroSidebarContent(this.props.heroPageData)}
           </nav>
-          <div className={'heroSidebar-menuIconDiv ' + getMenuIconAnimation}>
-            <img src="../images/sidebar_icon.png" onClick={this.onSidebarMenuClick}/>
+          <div
+            className={`menuDivBtn${getAnimationClass('menuDivBtn-animate')}`}
+            onClick={this.onSidebarMenuClick}>
+            <span className="hamb-top"></span>
+            <span className="hamb-middle"></span>
+            <span className="hamb-bottom"></span>
           </div>
         </div>
       </div>
