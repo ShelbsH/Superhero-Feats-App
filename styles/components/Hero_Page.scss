@@ -22,9 +22,9 @@
   background: transparent;
   display: block;
   border: none;
-  left: 20.2rem;
+  left: $heroSidebar-width;
   margin-left: 1.5rem;
-  transition: .4s all ease;
+  transition: .4s ease all;
   cursor: pointer;
 }
 
@@ -45,21 +45,21 @@
 
 .heroSidebar {
   padding-top: 5.6rem;
-  width: 20.2rem;
+  width: $heroSidebar-width;
   height: 100%;
-  background-color: #383838;
+  background-color: $nav-background;
   position: fixed;
   transition: .4s ease all;
 }
 
 .heroSidebar-content {
-  width: 20.2rem;
+  width: $heroSidebar-width;
   height: 27.4rem;
 }
 
 .heroSidebar-characterDetails {
   margin-top: 2.5rem;
-  width: 20.2rem;
+  width: $heroSidebar-width;
   height: 21.8rem;
   text-align: center;
 }
@@ -73,7 +73,7 @@
 .heroSidebar-img {
   width: 8.8rem;
   height: 8.8rem;
-  border: 3px solid #383838;
+  border: 3px solid $nav-background;
   border-radius: 3px;
   box-shadow: inset #7d898f 0 1px 6px, #bababa 0 0 0 2px;
 }
@@ -96,10 +96,10 @@
 }
 
 .heroSidebar-hide {
-  transform: translateX(-20.2rem);
+  transform: translateX(-$heroSidebar-width);
   visibility: hidden;
 }
 
 .menuDivBtn-animate {
-  transform: translateX(-20.2rem);
+  transform: translateX(-$heroSidebar-width);
 }
