@@ -1,10 +1,46 @@
 @import '../modules/variables.scss';
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Open+Sans');
 
+@mixin hamburger {
+  height: .2rem;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  left: 0;
+}
+
 .heroPage {
   font-family: 'Playfair Display', 'serif';
   color: $text-color;
   margin-top: 9rem;
+}
+
+.menuDivBtn {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: fixed;
+  background: transparent;
+  display: block;
+  border: none;
+  left: 20.2rem;
+  margin-left: 1.5rem;
+  transition: .4s all ease;
+  cursor: pointer;
+}
+
+.hamb-top {
+  @include hamburger;
+  bottom: 2rem;
+}
+
+.hamb-middle {
+  @include hamburger;
+  bottom: 50%;
+}
+
+.hamb-bottom {
+  @include hamburger;
+  top: 1.9rem;
 }
 
 .heroSidebar {
@@ -13,19 +49,15 @@
   height: 100%;
   background-color: #383838;
   position: fixed;
+  transition: .4s ease all;
 }
 
-.heroSidebar-profile {
+.heroSidebar-content {
   width: 20.2rem;
   height: 27.4rem;
 }
 
-.heroSidebar-menuIcon {
-  height: 5.6rem;
-  text-align: right;
-}
-
-.heroSidebar-characterDetail {
+.heroSidebar-characterDetails {
   margin-top: 2.5rem;
   width: 20.2rem;
   height: 21.8rem;
@@ -63,75 +95,11 @@
   }
 }
 
-.hideSidebar {
-  transform: translate(-15rem, 0);
+.heroSidebar-hide {
+  transform: translateX(-20.2rem);
+  visibility: hidden;
 }
 
-.heroSidebar-menuIconDiv {
-  position: absolute;
-  padding-top: 1.5rem;
-  padding-right: 1.7rem;
-  width: 8.0rem;
-  height: 5.6rem;
-  left: calc(20.2rem - 8rem); /*Set the div on the right corner on the Sidebar.*/
-  text-align: right;
-  background-color: #383838;
-}
-
-/*Animations*/
-.menuIconDiv-animate {
-  animation: animateMenuIconDiv .7s forwards;
-}
-
-.heroSidebar-animate {
-  animation: animateHeroSidebar .4s forwards;
-}
-
-.menuIconDiv-animate-reverse {
-  animation: animateMenuIconDivReverse;
-}
-
-.heroSidebar-animate-reverse {
-  animation: animateHeroSidebar-reverse;
-}
-
-@keyframes animateMenuIconDiv {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-20.2rem);
-  }
-  100% {
-    transform: translateX(-12.2rem);
-  }
-}
-
-@keyframes animateMenuIconDivReverse {
-  from {
-    transform: translateX(-12.2rem);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes animateHeroSidebar {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-20.2rem);
-    visibility: hidden;
-  }
-}
-
-@keyframes animateHeroSidebar-reverse {
-  from {
-    transform: translateX(-20.2rem);
-  }
-  to {
-    transform: translateX(0);
-    visibility: visible;
-  }
+.menuDivBtn-animate {
+  transform: translateX(-20.2rem);
 }
