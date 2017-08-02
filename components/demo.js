@@ -18,7 +18,19 @@ class Demo extends React.Component {
     };
   }
 
-  showHeroHandler(id) {
+  /** showHeroHandler(event)
+  *
+  * @requires {target.dataset.index} - index refers to id of a hero
+  * @param event {SyntheticEvent} - MouseEvent from clicking on a row in <Hero_Table> componenet
+  *
+  * Takes the index of the hero, gets the hero data, and then displays the hero data in local
+  * state.
+  *
+   */
+
+  showHeroHandler(event) {
+
+    const id = event.currentTarget.dataset.index;
     const getHeroData = (data, heroId) => data.filter((item) => item.id === heroId);
     const showHeroData = getHeroData(this.props.showData, id);
 

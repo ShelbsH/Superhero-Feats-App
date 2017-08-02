@@ -1,3 +1,9 @@
+/* global
+  describe
+  it
+  expect
+*/
+
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 import HeroTable from '../components/Hero_Table';
@@ -7,7 +13,7 @@ describe('Superhero Table', () => {
   let wrapper;
   let superhero_data;
   let firstRowNode;
-  let HeroBody;
+  // let HeroBody;
   let supermanData;
 
   superhero_data = [
@@ -46,7 +52,7 @@ describe('Superhero Table', () => {
   firstRowNode = wrapper
     .find('tbody')
     .find('td.heroTable-body-col');
-    
+
 
   it('should be able to match the equal amount of properties from the superhero_data', () => {
     const getFirstRow = wrapper.find('tbody').find('td');
@@ -87,7 +93,7 @@ describe('Superhero Table', () => {
         .find('tbody')
         .find('tr')
         .at(0);
-      
+
       tr.simulate('click', {
         currentTarget: {
           dataset: {

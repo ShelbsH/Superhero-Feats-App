@@ -6,12 +6,7 @@ import '../styles/components/Hero_Table.scss';
 class HeroTable extends React.Component {
   constructor(props) {
     super(props);
-
-    this.onRowClicked = this.onRowClicked.bind(this);
-  }
-
-  onRowClicked({currentTarget}) {
-    this.props.showHeroData(currentTarget.dataset.index);
+    this.displayName = 'HeroTable';
   }
 
   render() {
@@ -22,8 +17,9 @@ class HeroTable extends React.Component {
 
     const render_tBody = props => {
       return props.map((items, idx) => {
+        // onClick={this.props.showHeroData} - passes in the showHeroData function from the demo.js component
         return (
-          <tr key={idx} className="heroTable-body-row" data-index={items.id} onClick={this.onRowClicked}>
+          <tr key={idx} className="heroTable-body-row" data-index={items.id} onClick={this.props.showHeroData}>
             <td className={bodyCol}>
               <span><img className={spanImg} src={items.thumbnail}/></span>{items.real_name}
             </td>
