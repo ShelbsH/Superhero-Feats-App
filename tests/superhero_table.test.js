@@ -101,12 +101,22 @@ describe('Superhero Table', () => {
     });
 
     it('needs to have the character\'s profile picture image on the sidebar', () => {
-      expect(heroPageWrapper.find('img.heroSidebar-img').prop('src')).toBe(spiderManData.profile_picture)
+      expect(heroPageWrapper.find('img.heroSidebar-img').prop('src')).toBe(spiderManData.profile_picture);
     });
 
     it('needs to have a working character profile on the sidebar', () => {
       expect(heroPageWrapper.find('h2.heroSidebar-h2').at(0).text()).toEqual(spiderManData.real_name);
       expect(heroPageWrapper.find('h2.heroSidebar-h2').at(2).text()).toEqual(spiderManData.superhero_name);
     });
-  })
+
+    it('will have an animation of the sidebar menu button when clicked', () => {
+      const menuBtn = heroPageWrapper.find('div.menuDivBtn');
+      const sideBar = heroPageWrapper.find('nav.heroSidebar');
+
+      menuBtn.simulate('click');
+
+      expect(menuBtn.hasClass('menuDivBtn-animate')).toBe(true);
+      expect(sideBar.hasClass('heroSidebar-hide')).toBe(true);
+    });
+  });
 });
