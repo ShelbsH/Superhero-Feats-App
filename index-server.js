@@ -32,6 +32,11 @@ app.use(express.static(filePath));
 app.use(express.static(imagePath));
 
 //Render the index template upon the default root index request.
+
+const apiRoutes = require('./routes/apiRoutes');
+
+app.use('/api', apiRoutes);
+
 app.get('/', (req, res) => {
   res.render(getTemplate('index'));
 });
