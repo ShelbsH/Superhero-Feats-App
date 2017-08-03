@@ -28,9 +28,9 @@ class Demo extends React.Component {
   *
    */
 
-  showHeroHandler(event) {
+  showHeroHandler({currentTarget}) {
 
-    const id = event.currentTarget.dataset.index;
+    const id = currentTarget.dataset.index;
     const getHeroData = (data, heroId) => data.filter((item) => item.id === heroId);
     const showHeroData = getHeroData(this.props.showData, id);
 
