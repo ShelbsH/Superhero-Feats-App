@@ -9,6 +9,16 @@
   left: 0;
 }
 
+.featsPage {
+  margin-left: 15rem;
+  transition: ease .4s all;
+  padding: 0 3.5rem;
+}
+
+.featsPage-animate {
+  margin-left: -5rem;
+}
+
 .heroPage {
   font-family: 'Playfair Display', 'serif';
   color: $text-color;
