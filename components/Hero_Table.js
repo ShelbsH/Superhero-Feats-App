@@ -32,7 +32,7 @@ class HeroTable extends React.Component {
     };
 
     const headerClass = 'heroTable-header';
-    const HeroHeader = ({childText}) => <th className={headerClass}>{childText}</th>;
+    const HeroHeader = ({childText}) => (<th className={headerClass}>{childText}</th>);
 
     const render_HeroTable = () => {
       return (
