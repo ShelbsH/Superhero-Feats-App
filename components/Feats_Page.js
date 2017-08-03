@@ -7,7 +7,7 @@ class FeatsPage extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="page-header header-h1">{this.props.category}feats</h1>
+        <h1 className="page-header header-h1">{this.props.category} feats</h1>
       </div>
     );
   }
