@@ -8,7 +8,6 @@ class SearchBar extends React.Component {
     this.displayName = 'SearchBar';
 
     this.keyChange = this.keyChange.bind(this);
-    this.onAutoCompleteClick = this.onAutoCompleteClick.bind(this);
 
     this.state = {
       keyValues: ''
@@ -17,10 +16,6 @@ class SearchBar extends React.Component {
 
   keyChange({target}) {
     this.setState({keyValues: target.value});
-  }
-
-  onAutoCompleteClick({currentTarget}) {
-    this.props.showHeroData(currentTarget.dataset.index);
   }
 
   render() {
@@ -61,7 +56,7 @@ class SearchBar extends React.Component {
               className="auto-complete-li"
               key={index}
               data-index={item.id}
-              onClick={this.onAutoCompleteClick}>{item.real_name} as {item.superhero_name}
+              onClick={this.props.showHeroData}>{item.real_name} as {item.superhero_name}
             </li>
           );
         });
