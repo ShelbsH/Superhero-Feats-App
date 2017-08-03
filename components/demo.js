@@ -18,14 +18,13 @@ class Demo extends React.Component {
     };
   }
 
-  /** showHeroHandler(event)
-  *
-  * @requires {target.dataset.index} - index refers to id of a hero
-  * @param event {SyntheticEvent} - MouseEvent from clicking on a row in <Hero_Table> componenet
-  *
-  * Takes the index of the hero, gets the hero data, and then displays the hero data in local
-  * state.
-  *
+  /** 
+   * @method showHeroHandler(event)
+   * @requires {target.dataset.index} - index refers to id of a hero
+   * @param event {SyntheticEvent} - MouseEvent from clicking on a row in <Hero_Table> componenet
+   *
+   * Takes the index of the hero, gets the hero data, and then displays the hero data in local
+   * state.
    */
 
   showHeroHandler({currentTarget}) {
