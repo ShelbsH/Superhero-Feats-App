@@ -6,7 +6,6 @@ import ReactDOM from 'react-dom';
 import Demo from './components/demo';
 
 document.addEventListener('DOMContentLoaded', () => {
-
   const getJSON = url => {
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
