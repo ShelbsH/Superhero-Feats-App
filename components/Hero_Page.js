@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FeatsPage from './Feats_Page';
 import '../styles/components/Hero_Page.scss';
 
 class HeroPage extends React.Component {
@@ -7,10 +8,12 @@ class HeroPage extends React.Component {
     super(props);
 
     this.state = {
-      click: false
+      click: false,
+      categoryName: 'Stength/Power'
     };
 
     this.onSidebarMenuClick = this.onSidebarMenuClick.bind(this);
+    this.onCategoryListClick = this.onCategoryListClick.bind(this);
   }
 
   onSidebarMenuClick() {
@@ -20,11 +23,23 @@ class HeroPage extends React.Component {
     });
   }
 
+  onCategoryListClick({target}) {
+    const categoryNameValue = target.innerHTML;
+
+    this.setState({
+      categoryName: categoryNameValue
+    });
+  }
+
   render() {
     const isClicked = this.state.click;
     const getAnimationClass = className => isClicked ? ' ' + className : '';
 
-    const HeroCategoryList = ({featsCategory}) => <li className="heroSidebar-li">{featsCategory}</li>;
+    const HeroCategoryList = ({featsCategory}) => {
+      return (
+        <li className="heroSidebar-li" onClick={this.onCategoryListClick}>{featsCategory}</li>
+      );
+    };
 
     const HeroCategorySidebar = () => {
       const categoryList = [
@@ -73,12 +88,11 @@ class HeroPage extends React.Component {
     const render_HeroSidebarContent = props => {
       if (Array.isArray(props)) {
         return props.map((lists, index) => {
-          return (
-            <HeroSidebarContent
-              key={index}
-              real_name={lists.real_name}
-              superhero_name={lists.superhero_name}
-              profile_picture={lists.profile_picture}/>);
+          return (<HeroSidebarContent
+            key={index}
+            real_name={lists.real_name}
+            superhero_name={lists.superhero_name}
+            profile_picture={lists.profile_picture}/>);
         });
       }
     };
@@ -89,12 +103,19 @@ class HeroPage extends React.Component {
           <nav className={`heroSidebar${getAnimationClass('heroSidebar-hide')}`}>
             {render_HeroSidebarContent(this.props.heroPageData)}
           </nav>
-          <div
-            className={`menuDivBtn${getAnimationClass('menuDivBtn-animate')}`}
-            onClick={this.onSidebarMenuClick}>
-            <span className="hamb-top"></span>
-            <span className="hamb-middle"></span>
-            <span className="hamb-bottom"></span>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div
+              className={`menuDivBtn${getAnimationClass('menuDivBtn-animate')}`}
+              onClick={this.onSidebarMenuClick}>
+              <span className="hamb-top"></span>
+              <span className="hamb-middle"></span>
+              <span className="hamb-bottom"></span>
+            </div>
+            <div className={`featsPage${getAnimationClass('featsPage-animate')}`}>
+              <FeatsPage category={this.state.categoryName}/>
+            </div>
           </div>
         </div>
       </div>
