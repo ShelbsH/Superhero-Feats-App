@@ -114,6 +114,7 @@ class HeroPage extends React.Component {
               <span className="hamb-bottom"></span>
             </div>
             <div className={`featsPage${getAnimationClass('featsPage-animate')}`}>
+              <p className="heroLink" onClick={this.props.navigator}>Back to Table page</p>
               <FeatsPage category={this.state.categoryName}/>
             </div>
           </div>
@@ -124,7 +125,8 @@ class HeroPage extends React.Component {
 }
 
 HeroPage.propTypes = {
-  heroPageData: PropTypes.array
+  heroPageData: PropTypes.array,
+  navigator: PropTypes.func
 };
 
 export default HeroPage;
