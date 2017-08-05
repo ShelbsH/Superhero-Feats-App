@@ -12,6 +12,7 @@ class Demo extends React.Component {
 
     this.displayName = 'SuperheroFeats';
     this.showHeroHandler = this.showHeroHandler.bind(this);
+    this.onNavigationClick = this.onNavigationClick.bind(this);
 
     this.state = {
       heroData: undefined
@@ -38,6 +39,12 @@ class Demo extends React.Component {
     });
   }
 
+  onNavigationClick() {
+    this.setState({
+      heroData: null
+    });
+  }
+
   render() {
     return (
       <div className="app-root">
@@ -52,7 +59,8 @@ class Demo extends React.Component {
         <HeroTable
           data={this.props.showData}
           showHeroData={this.showHeroHandler}
-          heroPageData={this.state.heroData}/>
+          heroPageData={this.state.heroData}
+          navigator={this.onNavigationClick}/>
       </div>
     );
   }
