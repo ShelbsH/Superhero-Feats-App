@@ -53,7 +53,12 @@ class HeroTable extends React.Component {
     };
 
     const showHeroPageIfClicked = () => {
-      return this.props.heroPageData ? <HeroPage heroPageData={this.props.heroPageData} /> : render_HeroTable();
+      if(this.props.heroPageData) {
+        return (
+          <HeroPage heroPageData={this.props.heroPageData} navigator={this.props.navigator}/>
+        )
+      }
+      return render_HeroTable();
     };
 
     return (
@@ -65,7 +70,8 @@ class HeroTable extends React.Component {
 HeroTable.propTypes = {
   data: PropTypes.array,
   heroPageData: PropTypes.array,
-  showHeroData: PropTypes.func
+  showHeroData: PropTypes.func,
+  navigator: PropTypes.func
 };
 
 export default HeroTable;
