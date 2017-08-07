@@ -6,14 +6,21 @@ router.get('/', (req, res) => {
 
 router.get('/heroes', (req, res) => {
     const data = [
-        {
+    {
       thumbnail: 'https://static.comicvine.com/uploads/original/13/136345/5957182-superman_avatar.jpg',
       profile_picture: 'https://static.comicvine.com/uploads/original/13/136345/5978025-superman_profile.jpg',
       real_name: 'Clark Kent',
       superhero_name: 'Superman',
       tier: 'Power House',
       publisher: 'DC',
-      id: '1'
+      id: '1',
+      feats: {
+        'Strength/Power': {
+          title: 'Bruce Wayne lifts 1000lbs',
+          description: 'Bruce Wayne lifts over 1000lbs inside the wayne manor',
+          images: ['https://static.comicvine.com/uploads/original/13/139138/3057921-batweightraining.jpg']
+        }
+      }
     }, {
       thumbnail: 'https://static.comicvine.com/uploads/original/13/136345/5957179-batman_avatar.jpg',
       profile_picture: 'https://static.comicvine.com/uploads/original/13/136345/5978026-batman_profile.jpg',
@@ -21,7 +28,14 @@ router.get('/heroes', (req, res) => {
       superhero_name: 'Batman',
       tier: 'Street Leveler',
       publisher: 'DC',
-      id: '2'
+      id: '2',
+      feats: {
+        'Strength/Power': {
+          title: 'Bruce Wayne lifts 1000lbs',
+          description: 'Bruce Wayne lifts over 1000lbs inside the wayne manor',
+          images: ['https://static.comicvine.com/uploads/original/13/139138/3057921-batweightraining.jpg']
+        }
+      }
     }, {
       thumbnail: 'https://static.comicvine.com/uploads/original/13/136345/5957181-spider-man_avatar.jpg',
       profile_picture: 'https://static.comicvine.com/uploads/original/13/136345/5978024-spider-man_profile.jpg',
@@ -29,7 +43,14 @@ router.get('/heroes', (req, res) => {
       superhero_name: 'Spider-Man',
       tier: 'Street Levevler',
       publisher: 'Marvel',
-      id: '3'
+      id: '3',
+      feats: {
+        'Strength/Power': {
+          title: 'Bruce Wayne lifts 1000lbs',
+          description: 'Bruce Wayne lifts over 1000lbs inside the wayne manor',
+          images: ['https://static.comicvine.com/uploads/original/13/139138/3057921-batweightraining.jpg']
+        }
+      }
     }, {
       thumbnail: 'https://static.comicvine.com/uploads/original/13/136345/5957189-carol_danvers_avatar.jpg',
       profile_picture: 'https://static.comicvine.com/uploads/original/13/136345/5978033-carol_danversl_profile.jpg',
@@ -37,7 +58,14 @@ router.get('/heroes', (req, res) => {
       superhero_name: 'Captain Marvel',
       tier: 'Power House',
       publisher: 'Marvel',
-      id: '4'
+      id: '4',
+      feats: {
+        'Strength/Power': {
+          title: 'Bruce Wayne lifts 1000lbs',
+          description: 'Bruce Wayne lifts over 1000lbs inside the wayne manor',
+          images: ['https://static.comicvine.com/uploads/original/13/139138/3057921-batweightraining.jpg']
+        }
+      }
     }, {
       thumbnail: 'https://static.comicvine.com/uploads/original/13/136345/5957180-lantern_avatar.jpg',
       profile_picture: 'https://static.comicvine.com/uploads/original/13/136345/5978023-green_lantern_profile.jpg',
@@ -45,7 +73,14 @@ router.get('/heroes', (req, res) => {
       superhero_name: 'Green Lantern',
       tier: 'Power House',
       publisher: 'DC',
-      id: '5'
+      id: '5',
+      feats: {
+        'Strength/Power': {
+          title: 'Bruce Wayne lifts 1000lbs',
+          description: 'Bruce Wayne lifts over 1000lbs inside the wayne manor',
+          images: ['https://static.comicvine.com/uploads/original/13/139138/3057921-batweightraining.jpg']
+        }
+      }
     }, {
       thumbnail: 'https://static.comicvine.com/uploads/original/13/136345/5957193-daredevil_avatar.jpg',
       profile_picture: 'https://static.comicvine.com/uploads/original/13/136345/5978022-daredevil_profile.jpg',
@@ -53,7 +88,14 @@ router.get('/heroes', (req, res) => {
       superhero_name: 'Daredevil',
       tier: 'Street Levevler',
       publisher: 'Marvel',
-      id: '6'
+      id: '6',
+      feats: {
+        'Strength/Power': {
+          title: 'Bruce Wayne lifts 1000lbs',
+          description: 'Bruce Wayne lifts over 1000lbs inside the wayne manor',
+          images: ['https://static.comicvine.com/uploads/original/13/139138/3057921-batweightraining.jpg']
+        }
+      }
     }
     ];
     res.setHeader('Content-Type', 'application/json');
