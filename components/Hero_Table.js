@@ -56,7 +56,7 @@ class HeroTable extends React.Component {
       if(this.props.heroPageData) {
         return (
           <HeroPage heroPageData={this.props.heroPageData} navigator={this.props.navigator}/>
-        )
+        );
       }
       return render_HeroTable();
     };
