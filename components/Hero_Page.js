@@ -9,7 +9,7 @@ class HeroPage extends React.Component {
 
     this.state = {
       click: false,
-      categoryName: 'Stength/Power'
+      categoryName: 'Strength/Power'
     };
 
     this.onSidebarMenuClick = this.onSidebarMenuClick.bind(this);
@@ -43,7 +43,7 @@ class HeroPage extends React.Component {
 
     const HeroCategorySidebar = () => {
       const categoryList = [
-        'Stength/Power',
+        'Strength/Power',
         'Speed/Agility',
         'Martial Arts/Training',
         'Skills/Fights',
@@ -115,7 +115,7 @@ class HeroPage extends React.Component {
             </div>
             <div className={`featsPage${getAnimationClass('featsPage-animate')}`}>
               <p className="heroLink" onClick={this.props.navigator}>Back to Table page</p>
-              <FeatsPage category={this.state.categoryName}/>
+              <FeatsPage category={this.state.categoryName} feats={this.props.heroPageData}/>
             </div>
           </div>
         </div>
