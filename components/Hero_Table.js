@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HeroPage from './Hero_Page';
+import HeroSidebar from './Hero_Sidebar';
 import '../styles/components/Hero_Table.scss';
 
 class HeroTable extends React.Component {
@@ -55,7 +55,7 @@ class HeroTable extends React.Component {
     const showHeroPageIfClicked = () => {
       if(this.props.heroPageData) {
         return (
-          <HeroPage heroPageData={this.props.heroPageData} navigator={this.props.navigator}/>
+          <HeroSidebar heroPageData={this.props.heroPageData} navigator={this.props.navigator}/>
         );
       }
       return render_HeroTable();

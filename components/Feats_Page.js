@@ -18,22 +18,24 @@ class FeatsPage extends React.Component {
     };
 
     const render_FeatsDescription = props => {
-      return props.map((lists, index) => {
-        if(lists.feats[category]) {
-          return (
-            <div key={index}>
-              <FeatsDescription
-                title={lists.feats[category].title} 
-                description={lists.feats[category].description}/>
-              <Gallery images={lists.feats[category].images} backdropClosesModal={true}/>
-            </div>
-          );
-        }
-      });
+      if (Array.isArray(props)) {
+        return props.map((lists, index) => {
+          if (lists.feats[category]) {
+            return (
+              <div key={index}>
+                <FeatsDescription
+                  title={lists.feats[category].title}
+                  description={lists.feats[category].description}/>
+                <Gallery images={lists.feats[category].images} backdropClosesModal={true}/>
+              </div>
+            );
+          }
+        });
+      }
     };
-
+    console.log(render_FeatsDescription(this.props.feats));
     return (
-      //The image gallery would go on here and would be based off of a state
+    //The image gallery would go on here and would be based off of a state
       <div>
         <h1 className="page-header header-h1">{category} feats</h1>
         {render_FeatsDescription(this.props.feats)}

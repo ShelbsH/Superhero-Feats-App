@@ -7,7 +7,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 import HeroTable from '../components/Hero_Table';
-import HeroPage from '../components/Hero_Page';
+import HeroSidebar from '../components/Hero_Sidebar';
 
 describe('Superhero Table', () => {
   let wrapper;
@@ -86,7 +86,7 @@ describe('Superhero Table', () => {
     const mockTargetIndex = 2;
     const mockState = [superhero_data[mockTargetIndex]];
     const tableWrapper = shallow(<HeroTable data={superhero_data} heroPageData={mockState}/>);
-    const heroPageWrapper = mount(<HeroPage heroPageData={mockState} />);
+    const heroSidebarWrapper = mount(<HeroSidebar heroPageData={mockState}/>);
     const spiderManData = superhero_data[2];
 
     const tr = tableWrapper
@@ -103,21 +103,21 @@ describe('Superhero Table', () => {
       });
 
     it('should be able to load up the HeroPage component when a row is clicked', () => {
-      expect(heroPageWrapper.exists()).toBe(true);
+      expect(heroSidebarWrapper.exists()).toBe(true);
     });
 
     it('needs to have the character\'s profile picture image on the sidebar', () => {
-      expect(heroPageWrapper.find('img.heroSidebar-img').prop('src')).toBe(spiderManData.profile_picture);
+      expect(heroSidebarWrapper.find('img.heroSidebar-img').prop('src')).toBe(spiderManData.profile_picture);
     });
 
     it('needs to have a working character profile on the sidebar', () => {
-      expect(heroPageWrapper.find('h2.heroSidebar-h2').at(0).text()).toEqual(spiderManData.real_name);
-      expect(heroPageWrapper.find('h2.heroSidebar-h2').at(2).text()).toEqual(spiderManData.superhero_name);
+      expect(heroSidebarWrapper.find('h2.heroSidebar-h2').at(0).text()).toEqual(spiderManData.real_name);
+      expect(heroSidebarWrapper.find('h2.heroSidebar-h2').at(2).text()).toEqual(spiderManData.superhero_name);
     });
 
     it('will have an animation of the sidebar menu button when clicked', () => {
-      const menuBtn = heroPageWrapper.find('div.menuDivBtn');
-      const sideBar = heroPageWrapper.find('nav.heroSidebar');
+      const menuBtn = heroSidebarWrapper.find('div.menuDivBtn');
+      const sideBar = heroSidebarWrapper.find('nav.heroSidebar');
 
       menuBtn.simulate('click');
 
