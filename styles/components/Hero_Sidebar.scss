@@ -1,0 +1,121 @@
+@import '../modules/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Open+Sans');
+
+@mixin hamburger {
+  height: .2rem;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  left: 0;
+}
+
+.heroPageWrapper {
+  margin-left: 15rem;
+  transition: ease .4s all;
+  padding: 0 3.5rem;
+}
+
+.heroPage-animate {
+  margin-left: -5rem;
+}
+
+.heroPage {
+  font-family: 'Playfair Display', 'serif';
+  color: $text-color;
+  margin-top: 9rem;
+}
+
+.menuDivBtn {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: fixed;
+  background: transparent;
+  display: block;
+  border: none;
+  left: $heroSidebar-width;
+  margin-left: 1.5rem;
+  transition: .4s ease all;
+  cursor: pointer;
+}
+
+.hamb-top {
+  @include hamburger;
+  bottom: 2rem;
+}
+
+.hamb-middle {
+  @include hamburger;
+  bottom: 50%;
+}
+
+.hamb-bottom {
+  @include hamburger;
+  top: 1.9rem;
+}
+
+.heroSidebar {
+  padding-top: 5.6rem;
+  width: $heroSidebar-width;
+  height: 100%;
+  background-color: $nav-background;
+  position: fixed;
+  transition: .4s ease all;
+}
+
+.heroSidebar-content {
+  width: $heroSidebar-width;
+  height: 27.4rem;
+}
+
+.heroSidebar-characterDetails {
+  margin-top: 2.5rem;
+  width: $heroSidebar-width;
+  height: 21.8rem;
+  text-align: center;
+}
+
+.heroSidebar-h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: .3rem;
+}
+
+.heroSidebar-img {
+  width: 8.8rem;
+  height: 8.8rem;
+  border: 3px solid $nav-background;
+  border-radius: 3px;
+  box-shadow: inset #7d898f 0 1px 6px, #bababa 0 0 0 2px;
+}
+
+.heroSidebar-ul {
+  font-family: 'Open Sans' 'sans-serif';
+  font-size: 1.3rem;
+  list-style: none;
+  background-color: #4c4c4c;
+  padding: 0;
+}
+
+.heroSidebar-li {
+  display: block;
+  padding: 1rem 2.292rem;
+  &:hover {
+    background-color: #747474;
+    cursor: pointer;
+  }
+}
+
+.heroSidebar-hide {
+  transform: translateX(-$heroSidebar-width);
+  visibility: hidden;
+}
+
+.menuDivBtn-animate {
+  transform: translateX(-$heroSidebar-width);
+}
+
+.heroLink {
+  color: lightblue;
+  font-size: 1.4rem;
+  cursor: pointer;
+}

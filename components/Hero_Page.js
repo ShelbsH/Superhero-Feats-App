@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Gallery from 'react-grid-gallery';
-import '../styles/components/Feats_Page.scss';
+import '../styles/components/Hero_Page.scss';
 
-class FeatsPage extends React.Component {
+class HeroPage extends React.Component {
 
   render() {
     const category = this.props.category;
@@ -33,7 +33,7 @@ class FeatsPage extends React.Component {
         });
       }
     };
-    console.log(render_FeatsDescription(this.props.feats));
+
     return (
     //The image gallery would go on here and would be based off of a state
       <div>
@@ -44,9 +44,9 @@ class FeatsPage extends React.Component {
   }
 }
 
-FeatsPage.propTypes = {
+HeroPage.propTypes = {
   category: PropTypes.string,
   feats: PropTypes.array
 };
 
-export default FeatsPage;
+export default HeroPage;
