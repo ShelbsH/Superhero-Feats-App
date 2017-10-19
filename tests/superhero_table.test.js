@@ -6,6 +6,7 @@
 
 import React from 'react';
 import {shallow, mount} from 'enzyme';
+import HeroPage from '../components/Hero_Page';
 import HeroTable from '../components/Hero_Table';
 import HeroSidebar from '../components/Hero_Sidebar';
 
@@ -86,6 +87,7 @@ describe('Superhero Table', () => {
     const mockTargetIndex = 2;
     const mockState = [superhero_data[mockTargetIndex]];
     const tableWrapper = shallow(<HeroTable data={superhero_data} heroPageData={mockState}/>);
+    const heroPageWrapper = shallow(<HeroPage heroPageData={mockState} />);
     const heroSidebarWrapper = mount(<HeroSidebar heroPageData={mockState}/>);
     const spiderManData = superhero_data[2];
 
@@ -103,9 +105,14 @@ describe('Superhero Table', () => {
       });
 
     it('should be able to load up the HeroPage component when a row is clicked', () => {
+      expect(heroPageWrapper.exists()).toBe(true);
+    });
+    
+    it('should be able to load up the HeroSidebar component when a row is clicked', () => {
       expect(heroSidebarWrapper.exists()).toBe(true);
     });
 
+    //These specs below needs to be in a seperate file.
     it('needs to have the character\'s profile picture image on the sidebar', () => {
       expect(heroSidebarWrapper.find('img.heroSidebar-img').prop('src')).toBe(spiderManData.profile_picture);
     });
@@ -113,16 +120,6 @@ describe('Superhero Table', () => {
     it('needs to have a working character profile on the sidebar', () => {
       expect(heroSidebarWrapper.find('h2.heroSidebar-h2').at(0).text()).toEqual(spiderManData.real_name);
       expect(heroSidebarWrapper.find('h2.heroSidebar-h2').at(2).text()).toEqual(spiderManData.superhero_name);
-    });
-
-    it('will have an animation of the sidebar menu button when clicked', () => {
-      const menuBtn = heroSidebarWrapper.find('div.menuDivBtn');
-      const sideBar = heroSidebarWrapper.find('nav.heroSidebar');
-
-      menuBtn.simulate('click');
-
-      expect(menuBtn.hasClass('menuDivBtn-animate')).toBe(true);
-      expect(sideBar.hasClass('heroSidebar-hide')).toBe(true);
     });
   });
 });

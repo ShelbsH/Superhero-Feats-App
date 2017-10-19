@@ -1,39 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HeroPage from './Hero_Page';
 import '../styles/components/Hero_Sidebar.scss';
 
 class HeroSidebar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      click: false,
-      categoryName: 'Strength/Power'
-    };
-
-    this.onSidebarMenuClick = this.onSidebarMenuClick.bind(this);
     this.onCategoryListClick = this.onCategoryListClick.bind(this);
   }
 
-  onSidebarMenuClick() {
-
-    this.setState({
-      click: !this.state.click
-    });
-  }
-
   onCategoryListClick({target}) {
-    const categoryNameValue = target.innerHTML;
-
-    this.setState({
-      categoryName: categoryNameValue
-    });
+    this.props.listClick(target.innerHTML);
   }
 
   render() {
-    const isClicked = this.state.click;
-    const getAnimationClass = className => isClicked ? ' ' + className : '';
 
     const HeroCategoryList = ({featsCategory}) => {
       return (
@@ -98,24 +78,20 @@ class HeroSidebar extends React.Component {
     };
 
     return (
-      <div className="heroPage">
+      <div>
         <div className="wrapper">
-          <nav className={`heroSidebar${getAnimationClass('heroSidebar-hide')}`}>
+          <nav className={this.props.heroSidebarAnimation}>
             {render_HeroSidebarContent(this.props.heroPageData)}
           </nav>
         </div>
         <div className="container">
           <div className="row">
             <div
-              className={`menuDivBtn${getAnimationClass('menuDivBtn-animate')}`}
-              onClick={this.onSidebarMenuClick}>
+              className={this.props.heroSidebarMenuAnimation}
+              onClick={this.props.onSidebarMenuClick}>
               <span className="hamb-top"></span>
               <span className="hamb-middle"></span>
               <span className="hamb-bottom"></span>
-            </div>
-            <div className={`heroPageWrapper${getAnimationClass('heroPage-animate')}`}>
-              <p className="heroLink" onClick={this.props.navigator}>Back to Table page</p>
-              <HeroPage category={this.state.categoryName} feats={this.props.heroPageData}/>
             </div>
           </div>
         </div>
@@ -126,6 +102,10 @@ class HeroSidebar extends React.Component {
 
 HeroSidebar.propTypes = {
   heroPageData: PropTypes.array,
+  listClick: PropTypes.func,
+  heroSidebarAnimation: PropTypes.string,
+  heroSidebarMenuAnimation: PropTypes.string,
+  onSidebarMenuClick: PropTypes.func,
   navigator: PropTypes.func
 };
 
