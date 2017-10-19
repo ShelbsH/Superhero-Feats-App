@@ -42,9 +42,9 @@ class HeroPage extends React.Component {
          navigator={this.props.navigator}
          listClick={this.handleListClick}
          onSidebarMenuClick={this.onSidebarMenuClick} />
-      <div className={`heroGalleryWrapper${getAnimationClass('heroGallery-animate')}`}>
-        <HeroGallery feats={this.props.heroPageData} category={this.state.categoryName} />
-      </div>
+        <div className={`heroGalleryWrapper${getAnimationClass('heroGallery-animate')}`}>
+          <HeroGallery feats={this.props.heroPageData} category={this.state.categoryName} />
+        </div>
       </div>
     );
   }
