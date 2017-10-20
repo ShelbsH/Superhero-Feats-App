@@ -35,7 +35,6 @@ class HeroGallery extends React.Component {
     };
 
     return (
-    //The image gallery would go on here and would be based off of a state
       <div>
         <p className="heroLink" onClick={this.props.navigator}>Back to Table page</p>
         <h1 className="page-header header-h1">{category} feats</h1>
@@ -47,7 +46,8 @@ class HeroGallery extends React.Component {
 
 HeroGallery.propTypes = {
   category: PropTypes.string,
-  feats: PropTypes.array
+  feats: PropTypes.array,
+  navigator: PropTypes.func
 };
 
 export default HeroGallery;

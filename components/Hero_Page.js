@@ -17,6 +17,17 @@ class HeroPage extends React.Component {
     this.onSidebarMenuClick = this.onSidebarMenuClick.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    
+    //Reset the sidebar component by animating it back originally
+    //when the character profile change.
+    if(this.props !== nextProps) {
+      this.setState({
+        click: false
+      });
+    }
+  }
+
   handleListClick(categoryValue) {
     this.setState({
       categoryName: categoryValue
